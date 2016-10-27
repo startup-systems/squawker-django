@@ -2,6 +2,8 @@
 
 In this assignment, you will rebuild [Squawker](https://github.com/startup-systems/squawker) in [Django](https://www.djangoproject.com/).
 
+Dave's Development Notes
+https://ddc88-squawker.herokuapp.com/
 
 Step 1: generate requirements.txt
 ```
