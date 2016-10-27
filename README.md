@@ -2,6 +2,18 @@
 
 In this assignment, you will rebuild [Squawker](https://github.com/startup-systems/squawker) in [Django](https://www.djangoproject.com/).
 
+
+Step 1: generate requirements.txt
+```
+pip freeze > requirements.txt
+```
+
+Step 2: create Procfile
+```
+web: gunicorn gettingstarted.wsgi --log-file -
+```
+
+
 ## Requirements
 
 * The homepage (`/`) contains:
