@@ -1,1 +1,1 @@
-web: gunicorn {{ squawker }}.wsgi
+web: gunicorn squawker.wsgi --log-file -
