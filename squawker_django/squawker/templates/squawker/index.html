@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block body %}
   <div class="container">
-    <form action="/add_squawk/" method="post">
+    <form action="/add_squawk/" method="post">{% csrf_token %}
       <div class="form-group">
         <label for="squawk_text">what's on your mind?</label>
         <input type="text" class="form-control" name="squawk_text" pattern=".{1,140}" size="100" placeholder="Squawk" oninvalid="alert('140 characters or fewer')">
@@ -17,5 +17,14 @@
       </h2>
   	</div>
 
+    <div class="squawks">
+    {% for squawk in squawks %}
+      <blockquote class="blockquote">
+        {{ squawk.text }}
+      </blockquote>
+    {% endfor %}
+      </div>
+    </div>
+  </div>
 
 {% endblock %}
