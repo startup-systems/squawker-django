@@ -13,6 +13,14 @@ Step 2: create Procfile
 web: gunicorn gettingstarted.wsgi --log-file -
 ```
 
+Step 3: runtime.txt
+```
+echo 'python-3.5.2' > runtime.txt
+```
+
+
+Additional Support:
+https://devcenter.heroku.com/articles/python-support#supported-python-runtimes
 
 ## Requirements
 
