@@ -17,13 +17,14 @@
                 <li>{{item}}</li>
             {% endfor %}
         </ul>
-        <p>{{total}} squawks available</p>
     {% else %}
         <p>No squawks posted!</p>
     {% endif %}
 
+    <p>{{total}} squawks available</p>
+
     {% if has_next %}
-        <a href="">Next</a>
+        <a href="{% url 'squawk:index' next_page %}">Next</a>
     {% endif %}
 
 </body>

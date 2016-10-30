@@ -7,7 +7,7 @@ from .models import Squawk
 from .forms import SquawkForm
 
 
-def index(request):
+def index(request, page=0):
     if request.method == 'POST':
         form = SquawkForm(request.POST)
         if form.is_valid():
@@ -20,5 +20,8 @@ def index(request):
         form = SquawkForm()
 
     squawks = Squawk.objects.order_by('-date')
-    return render(request, 'squawk/index.html', {'squawks': squawks,
-                  'total': len(squawks), 'form': form})
+    return render(request, 'squawk/index.html', {
+        'squawks': squawks[int(page)*20:int(page)*20+20],
+        'total': len(squawks), 'form': form,
+        'has_next': (len(squawks) > int(page)*20+20),
+        'next_page': int(page)+1})
