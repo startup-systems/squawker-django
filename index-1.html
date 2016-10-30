@@ -1,0 +1,20 @@
+{% if latest_question_list %}
+<ul>
+    {% for post in latest_question_list %}
+    <li>{{ post.post_date }}: {{ post.post_text }}</li>
+    {% endfor %}
+    
+</ul>
+{% else %}
+<p>No polls are available.</p>
+{% endif %}
+
+
+
+<form action="/" method="post">
+    {% csrf_token %}
+    {{ form }}
+     <input type="submit" value="Submit" />
+</form>
+
+

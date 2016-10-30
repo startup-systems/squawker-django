@@ -1,20 +1,31 @@
-{% if latest_question_list %}
-<ul>
-    {% for post in latest_question_list %}
-    <li>{{ post.post_date }}: {{ post.post_text }}</li>
-    {% endfor %}
-    
-</ul>
-{% else %}
-<p>No polls are available.</p>
-{% endif %}
+{% extends "base.html" %}
+{% block body %}
+<div>
+    <form action="/add-squawk/" method="post">{% csrf_token %}
+        <div>
+            <label for="squawk_text">what's on your mind?</label>
+            <input type="text" name="squawk_text" pattern=".{1,140}" size="100" placeholder="Type your messsage here" oninvalid="alert('Max length: 140 characters')">
 
+        </div>
+        <input type="submit" value="submit">
+    </form>
+</div>
 
+<div>
+    <div >
+        <h2>
+            Your squawks history {{ context }}
+        </h2>
+    </div>
 
-<form action="/" method="post">
-    {% csrf_token %}
-    {{ form }}
-     <input type="submit" value="Submit" />
-</form>
+    <div>
+        {% for squawk in squawks %}
+        <blockquote>
+          [{{ squawk.post_date }}] {{ squawk.post_text }}
+        </blockquote>
+        {% endfor %}
+    </div>
+</div>
+</div>
 
-
+{% endblock %}
