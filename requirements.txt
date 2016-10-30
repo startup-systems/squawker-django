@@ -1,4 +1,9 @@
+dj-database-url==0.4.1
 Django==1.10.2
 gunicorn==19.6.0
-dj-database-url==0.4.1
+pep8==1.7.0
+psycopg2==2.6.2
+pytest==3.0.3
+pytest-json==0.4.0
+Werkzeug==0.11.11
 whitenoise==3.2.2
