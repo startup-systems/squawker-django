@@ -1,10 +1,17 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import Question
+from .models import Post 
 from django.views import generic
 from django.urls import reverse
 
+class IndexView(generic.ListView):
+    template_name = 'squawker/index.html'
+    context_object_name = 'latest_question_list'
+    def get_queryset(self):
+        #"""Return the last five published questions."""
+        return Post.objects.order_by('-post_date')[:5]
 
+'''
 class IndexView(generic.ListView):
     template_name = 'squawker/index.html'
     context_object_name = 'latest_question_list'
@@ -36,3 +43,4 @@ def vote(request, question_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse('squawker:results', args=(question.id,)))
+    '''
