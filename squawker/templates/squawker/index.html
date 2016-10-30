@@ -1,18 +1,20 @@
-
-{% comment %}
-
 {% if latest_question_list %}
 <ul>
-    {% for question in latest_question_list %}
-    <li><a href="{% url 'squawker:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% for post in latest_question_list %}
+    <li>{{ post.post_date }}: {{ post.post_text }}</li>
     {% endfor %}
     
-        {% for question in latest_question_list %}
-    <li><a href="{% url 'squawker:detail' question.id %}">{{ question.question_text }}</a></li>
-    {% endfor %}
 </ul>
 {% else %}
 <p>No polls are available.</p>
 {% endif %}
 
-{% endcomment %}
+
+
+<form action="/" method="post">
+    {% csrf_token %}
+    {{ form }}
+     <input type="submit" value="Submit" />
+</form>
+
+
