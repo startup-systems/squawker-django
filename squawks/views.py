@@ -6,7 +6,7 @@ from squawks.models import Squawk
 
 def index(request):
     squawks = Squawk.objects.order_by('-id')
-    return render(request, 'squawker/index.html', {'squawks': squawks})
+    return render(request, "../templates/squawks/index.html", {'squawks': squawks})
 
 
 def add_squawk(request):
@@ -18,3 +18,5 @@ def add_squawk(request):
         s = Squawk(text=request.POST.get('squawk_text'))
         s.save()
     return HttpResponseRedirect('/')
+
+

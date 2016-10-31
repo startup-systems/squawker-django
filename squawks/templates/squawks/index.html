@@ -1,38 +1,32 @@
-<!DOCTYPE html>
-<!-- Making html with buttons and form to input text -->
-<html>
-	<head>
-		<title>Carolina's Squawker</title>
-	</head>
-	<body>
-		<h1> Carolina's Squawker </h1>
-			<div>
-				<form action="/" method="Post">
-					<textarea placeholder= "What's your squawk?" name="post_text" maxlength="140" required></textarea>
-					<br>
-					Don't forget! 140 chars max <br>
-				<input type="submit" value="Post Your Squawk">
-				</form>
- 		</div>
 
- <!-- Now  creating the framework to collect and display all the incoming Tweets-->
- 		<div>
- 			{% for squawk in squawks %}
- 			
- 			<div>
- 				<!-- posting the tweet -->
- 			    {{ squawk[0] }} 
- 			    <br>
- 			<div>
- 	
- 			{% else %}
- 			    <p>Empty.</p>
- 		    {% endfor %}
- 		
- 		</div>
- 
-</body>
-</html>
+ {% extends "base.html" %}
+{% block body %}
+  <div class="container">
+    <form action="/add-squawk/" method="post">{% csrf_token %}
+      <div class="form-group">
+        <label for="squawk_text">What's up!</label>
+        <input type="text" class="form-control" name="squawk_text" pattern=".{1,140}" size="100" placeholder="Squawk" oninvalid="alert('140 characters or fewer')">
 
+      </div>
+      <input type="submit" class="btn btn-default" value="submit">
+    </form>
+  </div>
 
+  <div class="container">
+    <div class="columns large-12">
+        <h2>
+        Past squawks {{ context }}
+      </h2>
+    </div>
 
+    <div class="squawks">
+    {% for squawk in squawks %}
+      <blockquote class="blockquote">
+        {{ squawk.text }}
+      </blockquote>
+    {% endfor %}
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

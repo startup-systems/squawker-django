@@ -1,4 +1,4 @@
-"""squawker URL Configuration
+"""squawker_django URL Configuration
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.10/topics/http/urls/
 Examples:
@@ -14,8 +14,11 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from squawks import views
 
 urlpatterns = [
-    url(r'^', include('squawks.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^add-squawk/', views.add_squawk, name='index'),
+    url(r'^$', views.index, name='index'),
+    # url(r'^squawks/', include('squawks.urls')),
 ]
