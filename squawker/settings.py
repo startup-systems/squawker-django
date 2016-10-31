@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'squawker_db',
 		'USER': 'squawker_user',
 		'PASSWORD': 'squawker_pw',
-		'HOST': 'localhost',
+		'HOST': '',
 		'POST': '',
     }
 }
