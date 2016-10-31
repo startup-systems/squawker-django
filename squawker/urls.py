@@ -19,4 +19,3 @@ urlpatterns = [
     url(r'^', include('squawks.urls')),
     url(r'^admin/', admin.site.urls),
 ]
-

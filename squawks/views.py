@@ -2,7 +2,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from squawks.models import Squawk
-# from squawker.forms import SquawkForm
+
 
 def index(request):
     squawks = Squawk.objects.order_by('-id')
