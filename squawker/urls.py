@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.conf.urls import include
-from .views import postMsg
+from squawker.views import postMsg, index
+
 
 
 
 urlpatterns = [
-    url(r'^$', 'squawker.views.index'),
-    url(r'^postMsg/$',  'squawker.views.postMsg' ,name="postMsg")
+    url(r'^$', index, name="index"),
+    url(r'^postMsg/$',  postMsg ,name="postMsg")
 ]
