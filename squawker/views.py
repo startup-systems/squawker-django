@@ -36,4 +36,3 @@ def add_squawk(request):
             s = Squawk(text=request.POST.get('squawk_text'))
             s.save()
     return HttpResponseRedirect('/')
-
