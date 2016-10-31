@@ -3,6 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from squawker.models import Squawk
 # from squawker.forms import SquawkForm
 
+
 def index(request):
     squawks = Squawk.objects.order_by('-id')
     return render(request, 'squawker/index.html', {'squawks': squawks})
