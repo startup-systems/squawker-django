@@ -21,6 +21,8 @@ def index(request, page=0):
     squawks = Squawk.objects.order_by('-date')
     return render(request, 'squawk/index.html', {
         'squawks': squawks[int(page) * 20:int(page) * 20 + 20],
-        'total': len(squawks), 'form': form,
+        'total': len(squawks),
+        'form': form,
         'has_next': (len(squawks) > int(page) * 20 + 20),
-        'next_page': int(page) + 1})
+        'next_page': int(page) + 1
+        })
