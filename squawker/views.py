@@ -6,9 +6,11 @@ from django.views import generic
 from django.urls import reverse
 import datetime
 
+
 def index(request):
     squawks = Post.objects.order_by('-post_date')
     return render(request, 'squawker/index.html', {'squawks': squawks})
+
 
 def add_squawk(request):
     if request.method == 'POST':
