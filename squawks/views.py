@@ -16,5 +16,6 @@ def add_squawk(request):
         #     abort(400)
         # Use django ORM api to store squawk
         s = Squawk(text=request.POST.get('squawk_text'))
-        s.save()
+        if len(s.text) < 140:
+            s.save()
     return HttpResponseRedirect('/')
