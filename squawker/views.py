@@ -12,11 +12,14 @@ def index(request):
 def add_squawk(request):
     if request.method == 'POST':
         # TODO: Server side validation
-        # if len(request.POST.get('squawk_text')) > 140:
-        #     abort(400)
+        if len(request.POST.get('squawk_text')) > 140:
+            response = HttpResponse('Invalid input length (must be less than 140)')
+            response.status_code = 400
+            return response
         # Use django ORM api to store squawk
-        s = Squawk(text=request.POST.get('squawk_text'))
-        s.save()
+        else:
+            s = Squawk(text=request.POST.get('squawk_text'))
+            s.save()
     return HttpResponseRedirect('/')
 
 
