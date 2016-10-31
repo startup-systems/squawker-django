@@ -1,19 +1,28 @@
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<!DOCTYPE>
+<html>
+    <head>
+        <title>Squawker</title>
+    </head>
+    <body>
 
-<form action="{% url 'index' %}" method="post">
-{% csrf_token %}
-    <textarea placeholder="What's happening?" name='post_text' rows='4' cols='80'  maxlength='140' required></textarea>
-    <br>
-    140 chars max<br>
-    <input type=submit value="Squawk">
-</form>
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-{% if squawks %}
-    <ul>
-    {% for squawk in squawks %}
-        <li>{{ squawk.text }}</li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No squawks are available.</p>
-{% endif %}
+        <form action="{% url 'index' %}" method="post">
+        {% csrf_token %}
+            <textarea placeholder="What's happening?" name='post_text' rows='4' cols='80'  maxlength='140' required></textarea>
+            <br>
+            140 chars max<br>
+            <input type=submit value="Squawk">
+        </form>
+
+        {% if squawks %}
+            <ul>
+            {% for squawk in squawks %}
+                <li>{{ squawk.text }}</li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No squawks are available.</p>
+        {% endif %}
+    </body>
+</html>
