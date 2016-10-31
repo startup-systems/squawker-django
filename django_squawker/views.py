@@ -12,7 +12,7 @@ def index(request):
             return redirect('/')
         Posts.objects.create(text=request.POST['comment'])
         return redirect('/')
-    latest_posts = Posts.objects.order_by('-date_time')[:5]
+    latest_posts = Posts.objects.order_by('-date_time')[:]
     template = loader.get_template('django_squawker/index.html')
     context = {
         'greeting_list': latest_posts,
