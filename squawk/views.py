@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect, \
-                        HttpResponseBadRequest
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadRequest
 from django.urls import reverse
 
 from .models import Squawk
@@ -21,7 +20,7 @@ def index(request, page=0):
 
     squawks = Squawk.objects.order_by('-date')
     return render(request, 'squawk/index.html', {
-        'squawks': squawks[int(page)*20:int(page)*20+20],
+        'squawks': squawks[int(page) * 20:int(page) * 20 + 20],
         'total': len(squawks), 'form': form,
-        'has_next': (len(squawks) > int(page)*20+20),
-        'next_page': int(page)+1})
+        'has_next': (len(squawks) > int(page) * 20 + 20),
+        'next_page': int(page) + 1})
