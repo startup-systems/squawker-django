@@ -3,3 +3,4 @@ cycler==0.10.0
 dj-database-url==0.4.1
 Django==1.10.2
 psycopg2==2.6.2
+gunicorn==19.6.0
