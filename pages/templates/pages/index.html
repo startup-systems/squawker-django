@@ -1,0 +1,22 @@
+<div id="main" align="center">
+	<form action="/post" method="post">
+		<div>
+			<label>Type in something you want to share!</label>
+			<br>
+			<textarea id="msg" name="msg" rows="4" cols="50" maxlength="140"></textarea>
+		</div>
+		<div>
+			<button type="submit">Post</button>
+		</div>
+	</form>
+
+	<div id="squawks">
+		<h1>Current Page: {{page}}</h1>
+		{% for cur in msgs %}
+		<div>
+			<p>{{ cur.squawker_msg }}</p>
+			<br>
+		</div>
+		{% endfor %}
+	</div>
+</div>
