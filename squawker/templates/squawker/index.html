@@ -28,4 +28,22 @@
     </div>
   </div>
 
-{% endblock %}
+  <div>
+    <div class="container">
+      <div class=pagination>
+      {% if squawks.has_previous %}
+                  <a href="/{{ squawks.previous_page_number }}">Previous</a>
+              {% endif %}
+
+              <span class="current">
+                  Page {{ squawks.number }} of {{ squawks.paginator.num_pages }}.
+              </span>
+
+              {% if squawks.has_next %}
+                  <a href="/{{ squawks.next_page_number }}">Next</a>
+              {% endif %}
+      </div>
+    </div>
+  </div>
+
+      {% endblock %}

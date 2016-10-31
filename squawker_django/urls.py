@@ -20,6 +20,6 @@ from squawker import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^add-squawk/', views.add_squawk, name='index'),
+    url(r'^(?P<num>[0-9]+)/$', views.index),
     url(r'^$', views.index, name='index'),
-    # url(r'^squawks/', include('squawks.urls')),
 ]
