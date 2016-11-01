@@ -17,8 +17,8 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^$', include('pages.urls')),
-    url(r'^(?P<page_id>[0-9]+)/$', include('pages.urls')),
+    url(r'^$', include('squawker_django.urls')),
+    url(r'^(?P<page_id>[0-9]+)/$', include('squawker_django.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^post/', include('pages.urls')),
+    url(r'^post/', include('squawker_django.urls')),
 ]
