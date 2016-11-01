@@ -8,7 +8,7 @@ def index(request, page_id = 1):
 	cnt = len(latest_squawker_list)
 	template = loader.get_template('pages/index.html')
 	_start = (int(page_id) - 1) * 20
- 	_end = min(len(latest_squawker_list), (int(page_id) - 1) * 20 + 20)
+	_end = min(len(latest_squawker_list), (int(page_id) - 1) * 20 + 20)
 	context = { 
 		'msgs': latest_squawker_list[_start:_end],
 		'page': int(page_id),
