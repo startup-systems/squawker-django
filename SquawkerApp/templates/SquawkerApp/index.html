@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p> All Squawks </p>
+<ul>
+     {% for item in allsquawks %}
+          <li> {{item}}</li>
+     {% endfor %}
+</ul>
+<form action='/submitNewSquawk' method="post">
+{% csrf_token %}
+     New Squawk: <input type="text" name="squawk" style="width: 500px; height: 100px" maxlength="140">
+     <input type="submit" value="Submit"> 
+</form>
+
+</body>
+</html>
+
