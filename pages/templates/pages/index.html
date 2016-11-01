@@ -1,5 +1,6 @@
 <div id="main" align="center">
-	<form action="/post" method="post">
+	<form action="{% url 'postSq' %}" method="POST">
+		{% csrf_token %}
 		<div>
 			<label>Type in something you want to share!</label>
 			<br>
@@ -19,4 +20,13 @@
 		</div>
 		{% endfor %}
 	</div>
+
+	{% if page > 1 %}
+		<a href="/{{page|add:-1}}">Previous Page</a>
+	{% endif %}
+	
+	{% if num >= 20 %}
+		&nbsp;&nbsp;
+		<a href="/{{page|add:1}}">Next Page</a>
+	{% endif %}
 </div>

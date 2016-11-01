@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^$', include('pages.urls')),
     url(r'^(?P<page_id>[0-9]+)/$', include('pages.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^post/', include('pages.urls')),
 ]

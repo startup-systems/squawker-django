@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from .models import Squawker
 
@@ -11,7 +11,19 @@ def index(request, page_id = 1):
  	_end = min(len(latest_squawker_list), (int(page_id) - 1) * 20 + 20)
 	context = { 
 		'msgs': latest_squawker_list[_start:_end],
-		'page': page_id,
+		'page': int(page_id),
 		'num': cnt
 	}
 	return HttpResponse(template.render(context, request))
+
+
+def save_squawker(request):
+	if(request.method == 'POST'):
+		if len(request.POST.get('squawk_text')) > 140:
+			response = HttpResponse('Squawker too long')
+			response.status_code = 400
+			return response
+		u = Squawker(squawker_msg = request.POST['msg'])
+		u.save()
+	return HttpResponseRedirect('/')
+
