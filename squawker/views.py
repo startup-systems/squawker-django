@@ -20,9 +20,11 @@ def index(request):
 
     template = loader.get_template('home.html')
     all_squawks = Squawks.objects.all()
-    p_start = min(len(all_squawks) - 1, (page - 1) * 20)
-    p_end = min(len(all_squawks), (page * 20))
-    viewable_squawks = all_squawks[p_start:p_end]
+    viewable_squawks = all_squawks
+    if len(all_squawks) > 0:
+        p_start = min(len(all_squawks) - 1, (page - 1) * 20)
+        p_end = min(len(all_squawks), (page * 20))
+        viewable_squawks = all_squawks[p_start:p_end]
 
     context = {'page': page, 'viewable_squawks': viewable_squawks, }
     if status == 400:
