@@ -1,7 +1,6 @@
 beautifulsoup4==4.5.1
 chardet==2.3.0
 click==6.6
-command-not-found==0.3
 cssselect==1.0.0
 dj-database-url==0.4.1
 Django==1.10.2
