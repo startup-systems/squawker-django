@@ -7,7 +7,7 @@ def index(request, nowpage='1'):
     post = request.POST.get('msg', False)
     if post:
         if len(post) > 140:
-            return HttpResponseBadRequest
+            return HttpResponseBadRequest()
         Mymessage(message_text=post).save()
 
     count = Mymessage.objects.all().count()
