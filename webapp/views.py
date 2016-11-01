@@ -20,8 +20,6 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 def index(request, page=0):
     myList = ['One', 'Two', 'Three']
-    # newComment = MyTable.objects.create(comment="This is the third comment!")
-    # newComment.save()
     # myList = MyTable.objects.all()
     # myList = MyTable.objects.all().order_by('timestamp').latest()
 
