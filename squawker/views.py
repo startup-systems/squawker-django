@@ -8,7 +8,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 SQUAWKS_PER_PAGE = 20
 
 
-def index(request, num="1"):
+def index(request, num=1):
     squawk_list = Squawk.objects.order_by('-id')
     paginator = Paginator(squawk_list, SQUAWKS_PER_PAGE)
     page = num
