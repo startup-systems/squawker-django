@@ -77,10 +77,9 @@ WSGI_APPLICATION = 'squawker.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(default='sqlite:///db.sqlite3'),
 #{
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        
-    #}
+#'ENGINE': 'django.db.backends.sqlite3',
+#'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),        
+#}
 }
 
 
@@ -122,6 +121,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 #STATICFILES_DIRS = [
- #t   os.path.join(BASE_DIR, "static"),
-   # '/var/www/static/',
+# os.path.join(BASE_DIR, "static"),
+# '/var/www/static/',
 #]

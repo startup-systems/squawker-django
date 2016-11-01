@@ -4,6 +4,7 @@ from .models import Post
 from .forms import PostForm
 # Create your views here.
 
+
 def post_list(request):
     form = PostForm(request.POST or None)
     if form.is_valid():
@@ -11,14 +12,7 @@ def post_list(request):
         instance.save()
     queryset = Post.objects.all().order_by('-id')
     context = {
-        "obj_lists":queryset,
-        "title":"Squawker",
-        "form":form }
+        "obj_lists": queryset,
+        "title": "Squawker",
+        "form": form}
     return render(request, "index.html", context)
-
-
-
-
-
-
-
