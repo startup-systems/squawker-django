@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+      <title>Linna Wang</title>
+      {% load staticfiles %}
+      <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+      <meta charset="UTF-8">
+
+  </head>
+<body>
+  <div>
+  <ul>
+    <li><a class="active" href="/">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#trend">Trend</a></li>
+    <li><a href="#messages">Messages</a></li>
+  </ul>
+  		  <div>
+  			<div><div class = "title">SQUAWKER</div> <small>Hello, ichigo</small></div>
+        <br><br>
+  		</div>
+  <form action="{% url 'index' %}" method="POST">
+  <fieldset>
+    <legend>What's happening?</legend>
+    <a href="https://github.com/ichigooo"> <img src="https://ichigooo.github.io/startup-systems/asset/profile.JPG" class="profile"/></a>
+    <input type="text" name="content" pattern=".{1,140}" width="50%" height="6%"
+     oninvalid="alert('Please keep your squawk within 140 characters!')">
+    <input align="right" type="submit" value="Send">
+  </fieldset>
+  </form>
+  <div>
+      <h2>What Happened:</h2>
+      {% for feed in feeds %}
+      <div class="feed">
+      <p>{{ feed.squawk }}</p>
+      <p>Posted On: {{ feed.post_date }}</p>
+      <hr class="time">
+      </div>
+      {% endfor %}
+  </div>
+  {% if feeds.has_other_pages %}
+    <ul class="pagination">
+      {% if feeds.has_previous %}
+        <li><a href="?page={{ feeds.previous_page_number }}">&laquo;</a></li>
+      {% else %}
+        <li class="disabled"><span>&laquo;</span></li>
+      {% endif %}
+      {% for i in feeds.paginator.page_range %}
+        {% if users.number == i %}
+          <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+        {% else %}
+          <li><a href="?page={{ i }}">{{ i }}</a></li>
+        {% endif %}
+      {% endfor %}
+      {% if feeds.has_next %}
+        <li><a href="?page={{ feeds.next_page_number }}">next</a></li>
+      {% else %}
+        <li class="disabled"><span>&raquo;</span></li>
+      {% endif %}
+    </ul>
+  {% endif %}
+  </div>
+</body>
+</html>
