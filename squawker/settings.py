@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'squawker.wsgi.application'
 # replace the DATABASES config
 
 DATABASES = {'default': dj_database_url.config()}
-
+DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 
 
 # Password validation
