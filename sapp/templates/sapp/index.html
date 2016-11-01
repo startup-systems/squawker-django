@@ -4,18 +4,15 @@
 		<title>squawker</title>
 	<head>
 	<body>
-		<div class="postMsg">
+		<div id="postMsg">
 			<form action="{% url 'index' %}" method="POST">
-				<div>
-					<label for="msg">New message</label>
-					<textarea id="message" name="posts" maxlength="140"></textarea>
-				</div>
-				<div class="button">
-					<button type="submit">Post</button>
-				</div>
+			{% csrf_token %}
+				<label for="msg">New message</label>
+				<input type="test" name="posts" maxlength="140"></input>
+				<input type="submit" value="Submit"></input>
 			</form>
 		</div>
-		<div class="showMsg">
+		<div id="showMsg">
 			<label for="post">Posts</label>
 			{% for item in new %}
 			<div id="show">
