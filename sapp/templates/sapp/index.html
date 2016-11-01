@@ -6,15 +6,18 @@
 	<body>
 		<div id="postMsg">
 			<form action="{% url 'index' %}" method="POST">
-			{% csrf_token %}
-				<label for="msg">New message</label>
-				<input type="text" name="posts" maxlength="140"></input>
-				<input type="submit" value="Submit"></input>
+				{% csrf_token %}
+				<div>
+					<label for="msg">New message</label>
+					<textarea id="posts" name="posts" maxlength="140"></textarea>
+				</div>
+				<div>
+				<button type="submit">Submit</button>
 			</form>
 		</div>
 		<div id="showMsg">
 			<label for="post">Posts</label>
-			{% for item in new %}
+			{% for item in newPosts %}
 			<div id="show">
 				{{ item.message }}
 			</div>

@@ -13,6 +13,6 @@ def index(request):
             return response
         t = time.time()
         posts(message=post, post_time=t).save()
-    new = posts.objects.order_by('-post_time')[:20]
-    viewposts = {'new': new}
+    newPosts = posts.objects.order_by('-post_time')[:20]
+    viewposts = {'newPosts': newPosts}
     return render(request, 'sapp/index.html', viewposts)
