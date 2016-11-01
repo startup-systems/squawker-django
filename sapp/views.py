@@ -12,7 +12,7 @@ def index(request):
             response.status_code = 400
             return response
         t = time.time()
-        post(meaasage=post, post_time=t).save()
+        post(message=post, post_time=t).save()
     new = posts.objects.order_by('-post_time')[:20]
     viewposts = {'posts': new}
     return render(request, 'sapp/index.html', viewposts)
