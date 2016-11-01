@@ -7,6 +7,12 @@
 
 <body>
 <div id="squawks">
+    <p>Totoal Squawks: {{numSquawks}}</p>
+    {% if havePre == 1 %}
+        <a href="/page/{{ pageN|add:-1 }}">Previous</a> {% endif %}
+    {% if haveNext == 1 %}
+        <a href="/page/{{ pageN|add:1 }}">Next</a>
+    {% endif %}
     {% if squawk_list %}
     <ol>
         {% for squawk in squawk_list %}
