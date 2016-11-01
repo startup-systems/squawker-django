@@ -14,5 +14,5 @@ def index(request):
         t = time.time()
         posts(message=post, post_time=t).save()
     new = posts.objects.order_by('-post_time')[:20]
-    viewposts = {'posts': new}
+    viewposts = {'new': new}
     return render(request, 'sapp/index.html', viewposts)

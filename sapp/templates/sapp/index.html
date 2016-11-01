@@ -5,7 +5,7 @@
 	<head>
 	<body>
 		<div class="postMsg">
-			<form action="/" method="post">
+			<form action="{% url 'index' %}" method="POST">
 				<div>
 					<label for="msg">New message</label>
 					<textarea id="message" name="posts" maxlength="140"></textarea>
