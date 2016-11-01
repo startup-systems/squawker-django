@@ -83,7 +83,8 @@ WSGI_APPLICATION = 'squawker.wsgi.application'
 #     }
 # }
 
-DATABASES['default'] =  dj_database_url.config()
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators

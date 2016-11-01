@@ -28,7 +28,7 @@
       <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/squawker/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="345" selection-end="345" vertical-scroll-proportion="0.3220859">
+            <state line="88" column="21" selection-start="2465" selection-end="2465" vertical-scroll-proportion="0.33282208">
               <folding />
             </state>
           </provider>
@@ -419,7 +419,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/squawker/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="345" selection-end="345" vertical-scroll-proportion="0.3220859">
+        <state line="88" column="21" selection-start="2465" selection-end="2465" vertical-scroll-proportion="0.33282208">
           <folding />
         </state>
       </provider>
