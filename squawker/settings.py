@@ -14,9 +14,6 @@ import os
 # add this near the top
 import dj_database_url
 
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
-
 # replace the DATABASES config
 DATABASES = {
     "default": dj_database_url.config(default='sqlite:///db.sqlite3'),
