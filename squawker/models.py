@@ -14,5 +14,4 @@ class Squawk(models.Model):
     time = models.TimeField(auto_now_add=True, blank=True)
 
     def __str__(self):
-        return self.text
-        
+        return self.text        
