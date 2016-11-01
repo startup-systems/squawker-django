@@ -19,7 +19,7 @@ def index(request, page_id = 1):
 
 def save_squawker(request):
 	if(request.method == 'POST'):
-		if len(request.POST.get('squawk_text')) > 140:
+		if len(request.POST['msg']) > 140:
 			response = HttpResponse('Squawker too long')
 			response.status_code = 400
 			return response
