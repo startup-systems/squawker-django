@@ -26,7 +26,7 @@ def index(request, page=0):
     # myList = MyTable.objects.all().order_by('timestamp').latest()
 
     myList = MyTable.objects.all().order_by('-id')
-    paginator = Paginator(myList, 2)    # Show 20 contacts per page
+    paginator = Paginator(myList, 20)    # Show 20 contacts per page
 
     page = request.GET.get('page')
 
