@@ -8,13 +8,13 @@ from django.views import defaults
 from .models import Squawk
 
 
-def index(request, page_id = 0):
+def index(request, page_id=0):
     if len(request.POST) > 0:
         s = request.POST['squawk']
-        if len(s) == 0 or len(s) > 140:
-            errorResponse = HttpResponse('Input is invalied')
-            errorResponse.status_code = 400
-            return errorResponse
+        print(s)
+        print(len(s))
+        if len(s) > 140:
+            return HttpResponseBadRequest()
 
         t = Squawk(squawk_text=request.POST['squawk'], pub_date=timezone.now())
         t.save()
@@ -25,4 +25,3 @@ def index(request, page_id = 0):
         'page_id': page_id,
     }
     return render(request, 'demo/index.html', context)
-
