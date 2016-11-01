@@ -9,7 +9,7 @@
 				{% csrf_token %}
 				<div>
 					<label for="msg">New message</label>
-					<textarea id="getPosts" name="getPosts" maxlength="140"></textarea>
+					<textarea id="get_posts" name="get_posts" maxlength="140"></textarea>
 				</div>
 				<div>
 				<button type="submit">Submit</button>
@@ -18,7 +18,7 @@
 		</div>
 		<div id="showMsg">
 			<label for="post">Posts</label>
-			{% for item in newPosts %}
+			{% for item in new_posts %}
 			<div id="show">
 				{{ item.message }}
 			</div>
