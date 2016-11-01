@@ -80,7 +80,17 @@ WSGI_APPLICATION = 'squawker.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 # replace the DATABASES config
-DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
+
+db_config = dj_database_url.config()
+if db_config:
+    DATABASES['default'] =  db_config
 
 
 
