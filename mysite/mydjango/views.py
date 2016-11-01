@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from .models import Squawker
 # Create your views here.
 def index(request):
+
+
     if request.method == "POST":
         new_message = request.POST["usr_message"]
         if len(new_message) > 140:
