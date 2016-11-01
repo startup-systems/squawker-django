@@ -19,6 +19,7 @@ def index(request):
     return render(request, 'index.html', context)
 
 @ensure_csrf_cookie
+
 def postMsg(request):
     squawk_save = Squawk(text=request.POST['usr_message'])
     if len(squawk_save.text) > 140:
