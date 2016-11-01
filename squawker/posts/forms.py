@@ -9,4 +9,4 @@ class PostForm(forms.ModelForm):
         fields = [
             "title",
             "content"
-]
+        ]
