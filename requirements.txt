@@ -16,8 +16,6 @@ py==1.4.31
 pytest==3.0.3
 pytest-django==3.0.0
 pytest-json==0.4.0
-python-debian==0.1.27
-python-systemd==231
 requests==2.9.1
 selenium==3.0.1
 six==1.10.0
