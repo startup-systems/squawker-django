@@ -55,11 +55,11 @@ def newComment(request, page=0):
         # render(request, 'index.html', {'rows':myList})
         # return HttpResponse(status=400)
         myList = MyTable.objects.all().order_by('-id')
-        return render(request, 'index.html', {'rows': myList},status=400)
+        return render(request, 'index.html', {'rows': myList}, status=400)
     else:
         newComment = MyTable.objects.create(comment=value)
         newComment.save()
         myList = MyTable.objects.all().order_by('-id')
         csrfContext = RequestContext(request)
         return redirect('/')
-        #return render(request, 'index.html', {'rows':myList})
+        # return render(request, 'index.html', {'rows':myList})
