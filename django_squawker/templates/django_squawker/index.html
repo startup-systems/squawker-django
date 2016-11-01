@@ -46,7 +46,7 @@
                 </tbody>
             </table>
             <p>
-                {% if hasNextPage != 0 %}<a href="{% url 'detail' page=next_num %}">NEXT</a>{% endif %}
+                {% if hasNextPage != 0 %}<a href="{% url 'index' page=next_num %}">NEXT</a>{% endif %}
             </p>
         </div>
     </div>

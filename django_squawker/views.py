@@ -6,22 +6,7 @@ from .models import Posts
 from django.views.decorators.csrf import ensure_csrf_cookie
 
 
-def index(request):
-    if request.method == 'POST':
-        if len(request.POST['comment']) > 140:
-            return HttpResponseBadRequest("Bad input")
-        Posts.objects.create(text=request.POST['comment'])
-        return redirect('/')
-    latest_posts = Posts.objects.order_by('-date_time')[:]
-    template = loader.get_template('django_squawker/index.html')
-    context = {
-        'greeting_list': latest_posts,
-        'next_num': 0,
-    }
-    return HttpResponse(template.render(context, request))
-
-
-def detail(request, page):
+def index(request, page='1'):
     if request.method == 'POST':
         if len(request.POST['comment']) > 140:
             return HttpResponseBadRequest("400: Bad input")

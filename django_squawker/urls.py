@@ -6,5 +6,5 @@ urlpatterns = [
     # ex: /polls/
     url(r'^$', views.index, name='index'),
     # ex: /polls/5/
-    url(r'^(?P<page>[0-9]+)/$', views.detail, name='detail'),
+    url(r'^(?P<page>[0-9]+)/$', views.index, name='index'),
 ]
