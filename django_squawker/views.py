@@ -9,7 +9,7 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 def index(request, page='1'):
     if request.method == 'POST':
         if len(request.POST['comment']) > 140:
-            return HttpResponseBadRequest("400: Bad input")
+            return HttpResponseBadRequest("400: BAD INPUT")
         Posts.objects.create(text=request.POST['comment'])
         return redirect('/')
     latest_posts = Posts.objects.order_by('-date_time')[:]
