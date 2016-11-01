@@ -14,13 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
-from django.conf.urls import include
 from squawker.views import postMsg, index
-
-
 
 
 urlpatterns = [
     url(r'^$', index, name="index"),
-    url(r'^postMsg/$',  postMsg ,name="postMsg")
+    url(r'^postMsg/$', postMsg, name="postMsg")
 ]

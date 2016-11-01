@@ -5,20 +5,19 @@ Created on Mon Oct 31 09:39:03 2016
 @author: Federico
 """
 
-
-from django.http import HttpResponse 
+from django.http import HttpResponse
 from squawker.models import Squawk
 from django.views.decorators.csrf import ensure_csrf_cookie
-from django.shortcuts import  render
+from django.shortcuts import render
 from django.http import HttpResponseRedirect
-   
-    
+
+
 def index(request):
     get_squawks = Squawk.objects.all().order_by('-time')
     context = {'get_squawks': get_squawks}
-    
+
     return render(request, 'index.html', context)
-    
+
 @ensure_csrf_cookie
 def postMsg(request):
     squawk_save = Squawk(text=request.POST['usr_message'])
@@ -28,4 +27,3 @@ def postMsg(request):
         return response
     squawk_save.save()
     return HttpResponseRedirect('/')
-        
