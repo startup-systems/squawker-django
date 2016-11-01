@@ -18,3 +18,4 @@ def add_squawker(request):
         return response
     q.save()
     return index(request)
+    
