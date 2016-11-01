@@ -4,7 +4,5 @@ from django.db import models
 
 
 class Squawker(models.Model):
-
-
     post = models.CharField(max_length=140)
     # time = models.DateTimeField(datetime.now())
