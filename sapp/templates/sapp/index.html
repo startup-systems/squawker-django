@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>squawker</title>
+	<head>
+	<body>
+		<div class="postMsg">
+			<form action="/" method="post">
+				<div>
+					<label for="msg">New message</label>
+					<textarea id="message" name="post" maxlength="140"></textarea>
+				</div>
+				<div class="button">
+					<button type="submit">Post</button>
+				</div>
+			</form>
+		</div>
+		<div class="showMsg">
+			<label for="post">Posts</label>
+			{% for item in new %}
+			<div id="show">
+				{{ item.message }}
+			</div>
+			{% endfor %}
+		</div>
+	</body>
+</html>
+
