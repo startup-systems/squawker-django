@@ -20,4 +20,3 @@ def add_squawk(request):
         else:
             return HttpResponseBadRequest("/")
         return HttpResponseRedirect('/')
-
