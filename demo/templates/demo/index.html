@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Squawker</title>
+</head>
+
+<body>
+<div id="squawks">
+    {% if squawk_list %}
+    <ol>
+        {% for squawk in squawk_list %}
+            <li>{{ squawk.squawk_text }}</li>
+        {% endfor %}
+    </ol>
+    {% endif %}
+</div>
+<br>
+<br>
+<form action="{% url 'add' %}" method="post">
+    {% csrf_token %}
+    <div>
+        <label for="msg">Say something:</label>
+        <br>
+        <textarea id="msg" name="squawk" maxlength="140"></textarea>
+    </div>
+    <div class="button">
+        <button type="submit">post</button>
+    </div>
+</form>
+</body>
+
+</html>
