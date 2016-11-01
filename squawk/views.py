@@ -24,5 +24,4 @@ def index(request, page=0):
         'total': len(squawks),
         'form': form,
         'has_next': (len(squawks) > int(page) * 20 + 20),
-        'next_page': int(page) + 1
-        })
+        'next_page': int(page) + 1})
