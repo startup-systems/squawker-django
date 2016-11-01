@@ -9,7 +9,7 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 def index(request):
     if request.method == 'POST':
         if len(request.POST['comment']) > 140:
-            return HttpResponseBadRequest('', mimetype='application/json', status=400)
+            return HttpResponseBadRequest("Bad input")
         Posts.objects.create(text=request.POST['comment'])
         return redirect('/')
     latest_posts = Posts.objects.order_by('-date_time')[:]
@@ -24,7 +24,7 @@ def index(request):
 def detail(request, page):
     if request.method == 'POST':
         if len(request.POST['comment']) > 140:
-            return HttpResponseBadRequest('', mimetype='application/json', status=400)
+            return HttpResponseBadRequest("400: Bad input")
         Posts.objects.create(text=request.POST['comment'])
         return redirect('/')
     latest_posts = Posts.objects.order_by('-date_time')[:]
