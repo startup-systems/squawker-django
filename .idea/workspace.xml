@@ -28,7 +28,7 @@
       <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/squawker/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="88" column="21" selection-start="2465" selection-end="2465" vertical-scroll-proportion="0.33282208">
+            <state line="89" column="21" selection-start="2472" selection-end="2472" vertical-scroll-proportion="0.36809817">
               <folding />
             </state>
           </provider>
@@ -92,7 +92,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="345" />
+    <option name="x" value="365" />
     <option name="y" value="23" />
     <option name="width" value="1420" />
     <option name="height" value="823" />
@@ -236,7 +236,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="345" y="23" width="1420" height="823" extended-state="0" />
+    <frame x="365" y="23" width="1420" height="823" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -419,7 +419,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/squawker/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="21" selection-start="2465" selection-end="2465" vertical-scroll-proportion="0.33282208">
+        <state line="89" column="21" selection-start="2472" selection-end="2472" vertical-scroll-proportion="0.36809817">
           <folding />
         </state>
       </provider>
