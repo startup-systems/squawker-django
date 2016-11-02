@@ -1,0 +1,12 @@
+{% if other_message_list %}
+    <ul>
+    {% for message in other_message_list %}
+        <li>{{ message.message }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No squawkers are available.</p>
+{% endif %}
+
+<a herf='{% url 'index' %}'> Home </a>
+

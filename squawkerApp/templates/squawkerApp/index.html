@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Squwaker </title>
+    </head>
+    <body>
+        <form action='{% url 'index' %}' method='POST'>
+            {% csrf_token %}
+            <input type='text' name='message' maxlength=140 autofocus>
+            <input type='submit' value='Submit!'>
+        </form> 
+        {% if latest_message_list %}
+            <ul>
+            {% for message in latest_message_list %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No squawkers are available.</p>
+        {% endif %}
+    </body>
+</html>
+
+
