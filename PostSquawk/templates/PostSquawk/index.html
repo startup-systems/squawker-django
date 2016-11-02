@@ -9,7 +9,7 @@
             <li> {{item}} </li>
         {% endfor %}
     </ul>
-    <form action='/postSquawk' method="post">
+    <form action="{% url 'index' %}" method="post">
         {% csrf_token %}
         SquawkPost: <input type="text" name="post" maxlength="140">
         <input type="submit" value="Submit">
