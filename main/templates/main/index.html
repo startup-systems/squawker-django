@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Squawker</title>
+</head>
+<body>
+	<div id="squawk">
+		<form action="{% url 'index' %}" method="POST">
+			{% csrf_token %}
+			<input type="text" name="input" maxlength="140" placeholder="Squawk:" />
+			<input type="submit" value="Post">
+		</form>
+	</div>
+	{% for item in feed %}
+	<div id="squawks">
+		{{ item.message }}
+	</div>
+	{% endfor %}
+</body>
+</html>
