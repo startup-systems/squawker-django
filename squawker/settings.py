@@ -27,7 +27,7 @@ SECRET_KEY = 'p2o6#2dbas78^tr0+8$$o3+8(impj_*7jora4kyv790283kwd='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['jjs383-squawker.herokuapp.com']
 
 
 # Application definition
