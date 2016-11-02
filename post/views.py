@@ -13,6 +13,6 @@ def index(request):
         else:
             newPost = posts(message=post_msg)
             newPost.save()
-    squawkers = posts.objects.order_by('-auto_id')
+    squawkers = posts.objects.order_by('-msg_id')
     context = {'squawkers': squawkers}
     return render(request, 'post/index.html', context)
