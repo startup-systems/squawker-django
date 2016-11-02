@@ -21,11 +21,10 @@ from .models import squawker
 #     return HttpResponse(output)
 
 
-
 def index(request):
     if request.method == 'POST':
         squawk2 = request.POST['message']
-        print (squawk2)
+        print(squawk2)
         if len(squawk2) > 140:
             res = HttpResponse('text exceed 140 characters')
             res.status_code = 400
