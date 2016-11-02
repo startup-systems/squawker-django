@@ -1,5 +1,5 @@
 Django~=1.10.2
-gunicorn==19.16.0
+gunicorn==19.6.0
 pep8~=1.7.0
 pytest~=3.0.3
 pytest-django~=3.0.0
