@@ -3,7 +3,7 @@
 	</head>
 	<body>
 		<form action="/" method="post">{% csrf_token %}
-			<textarea placeholder="What's on your mind?" name='text' rows='3' cols='50'  maxlength='500' required></textarea>
+			<textarea placeholder="What's on your mind?" name='text' rows='3' cols='50'  maxlength='140' required></textarea>
 			<br>
 			<input type=submit value="Squawk">
 		</form>
