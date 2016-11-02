@@ -5,6 +5,7 @@ import time
 
 # Create your views here.
 
+
 def index(request):
     if request.method == 'POST':
         post_msg = request.POST.get('get_posts')
