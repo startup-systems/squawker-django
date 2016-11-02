@@ -81,17 +81,6 @@ WSGI_APPLICATION = 'squawker.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mydb',
-        'USER': 'zqvgokffsfjejb',
-        'PASSWORD': 'm4z8B-GXyRBd4FDoDOIxxH-SKO',
-        'HOST': 'ec2-54-225-112-215.compute-1.amazonaws.com',
-        'PORT': '5432',
-    }
-}
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
