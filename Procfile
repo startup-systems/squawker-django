@@ -1,1 +1,1 @@
-web: gunicorn squawker.wsgi collectstatic --noinput--log-file -
+web: gunicorn squawker.wsgi --log-file -
