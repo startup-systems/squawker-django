@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 
 class Squawks(models.Model):
     squawks_text = models.CharField(max_length=140)
