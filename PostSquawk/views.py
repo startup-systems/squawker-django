@@ -13,5 +13,5 @@ def index(request):
             return HttpResponseRedirect(reverse('index'))
         else:
             return HttpResponseBadRequest(400)
-    posts postSquawk.objects.order_by('-id')
+    posts = postSquawk.objects.order_by('-id')
     return render(request, 'PostSquawk/index.html', {'squawks': posts})
