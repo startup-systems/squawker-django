@@ -14,6 +14,6 @@ def index(request):
         squawk.save()
         return redirect(index)
     else:
-        squawks = Squawk.objects.all()
+        squawks = Squawk.objects.order_by('-time')
         return render(request, "show_entries.html", {"entries":squawks})    
     
