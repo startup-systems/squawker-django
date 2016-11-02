@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <title>Squawker</title>
+    <body>
+        <form action="/" method="POST">{% csrf_token %}
+            <textarea id="msg" name="squawk" maxlength="140"></textarea>
+            <div class="button">
+                <button type="submit">SUBMIT!</button>
+            </div>
+        </form>
+        <div>
+            {% for x in all_squawks %}
+            <p>{{ x.squawks_text }}</p>
+            {% endfor %}
+        </div>
+    </body>
+</html>
+
