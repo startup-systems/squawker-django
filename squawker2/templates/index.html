@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Squawker</title>
+</head>
+<body>
+	<!-- Form to post a squawk -->
+	<form action="{% url 'squawker:add'%}" method="post">
+		<div>
+				<label for="msg">Type in your post:</label>
+						<br>
+                 {% csrf_token %}
+				<textarea placeholder="What's going on?" name='post_text' rows='4' cols='80' id="post_text"  maxlength="140"></textarea>
+		</div>
+		<div class="button">
+			<button type="submit">Post</button>
+		</div>
+	</form>
+		<!-- List of sqawks -->
+	<div id="squawks">
+        <p>Squawks By Time: </p>
+		<br>
+		{% for entry in squawker2_squawks %}
+    		<br>
+<!--            <div> hi </div>-->
+    		<div>{{ entry.squawk  }}</div>
+		{% endfor %}
+
+	</div>
+
+	<br><br>
+
+
+
+</body>
+</html>
