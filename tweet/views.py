@@ -9,6 +9,7 @@ from datetime import datetime
 
 
 def index(request):
+    content = ''
     if request.method == 'POST':
         content = request.POST['input']
         if len(content) > 140:
