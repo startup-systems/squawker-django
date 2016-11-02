@@ -1,0 +1,30 @@
+<!doctype html>
+<head>
+  <title>Squawker</title>
+</head>
+<body>
+<form action="{% url 'index' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+</form>
+<div>
+{% if squawkers %}
+    <ul> 
+  {% for item in squawkers %}
+    <p>{{ item }}</p>
+  {% endfor %}
+  {% else %}
+    <li><em>Unbelievable.  No entries here so far</em>
+  {% endif %}
+</div>
+<div>
+{% if prev > 0  %}
+<a href="{% url 'indexpage' prev %}">Prev</a>
+{% endif %}
+{% if next < last_page  %}
+<a href="{% url 'indexpage' next %}">Next</a>
+{% endif %}
+</div>
+</body>
+</html>
