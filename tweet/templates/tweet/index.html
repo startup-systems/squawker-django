@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+    
+    <h1>{{ question.question_text }}</h1>
+
+    <form action="{% url 'index' %}" method="post">
+    {% csrf_token %}
+        <textarea name="input" type="text" placeholder="What's up?" maxlength="140" required></textarea>
+        <input type="submit" value="Squawk!" />
+    </form>
+
+    {% for post in latest_posts %}
+        <div>
+        {{ post.post_text }}
+        </div>
+    {% endfor %}
+
+    </body>
+</html>
