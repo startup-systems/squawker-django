@@ -1,6 +1,6 @@
 from django.http import HttpResponseRedirect, HttpResponseBadRequest
 from .models import postSquawk
-from django.shortcuts import render, direct
+from django.shortcuts import render
 from django.urls import reverse
 
 
