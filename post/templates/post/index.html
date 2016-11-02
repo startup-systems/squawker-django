@@ -5,13 +5,12 @@
 	<head>
 	<body>
 		<div id="postMsg">
-			<form action="{% url 'index' %}" method="post">
+			<form action="{% url 'index' %}" method="POST">
 				{% csrf_token %}
 				<div>
 					<h1>Squawker</h1>
 					<label>What's New?</label>
-				</br>
-					<textarea id="get_posts" name="get_posts" maxlength="140"></textarea>
+			<textarea id="get_posts" name="get_posts" maxlength="140"></textarea>
 				</div>
 				<div>
 				<button type="submit">Submit</button>
