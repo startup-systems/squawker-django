@@ -1,4 +1,10 @@
-    <form action = "{% url 'index' %}" method = "POST">
+<!DOCTYPE html>
+<html>
+<head>
+<title>Squawker</title>
+</head>
+<body>
+ <form action = "{% url 'index' %}" method = "POST">
     {% csrf_token %}
     <div>
         <label for="msg">New squawk:</label>
@@ -18,3 +24,5 @@
 {% else %}
     <p>No squawks are available.</p>
 {% endif %}
+</body>
+</html>
