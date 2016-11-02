@@ -16,5 +16,5 @@ def index(request):
             return HttpResponseRedirect(reverse('index'))
     result = Post.objects.order_by('-auto_id')
     context = {'rows': result}
-    return render(request, 'index.html', context)
+    return render(request, 'postfeed/index.html', context)
 # Create your views here.
