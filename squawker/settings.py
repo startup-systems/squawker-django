@@ -77,19 +77,10 @@ WSGI_APPLICATION = 'squawker.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-in_heroku = False
-if 'DATABASE_URL' in os.environ:
-    in_heroku = True
+DATABASES = {
+   "default": dj_database_url.config(default='sqlite:///db.sqlite3'),
+}
 
-if in_heroku:
-    DATABASES = {'default': dj_database_url.config()}
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
 
 DEFAULT_CHARSET = 'utf-8'
 
