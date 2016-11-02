@@ -12,7 +12,7 @@
 {% if latest_squawk_list %}
     <ul>
     {% for squawk in latest_squawk_list %}
-        <li>{{squawk.squawk_text}}&emsp{{squawk.timestamp}}</li>
+        <li>{{squawk.squawk_text}} {{squawk.timestamp}}</li>
     {% endfor %}
     </ul>
 {% else %}
