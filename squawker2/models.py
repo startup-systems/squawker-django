@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+# fix climated control
 from django.db import models
 
 
