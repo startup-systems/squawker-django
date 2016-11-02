@@ -77,9 +77,8 @@ WSGI_APPLICATION = 'squawker.wsgi.application'
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(default='postgres://eygtxmyhjjrqiq:ZJ4Qb011ia7cQUjFIFbt1KWWoK@ec2-184-73-222-90.compute-1.amazonaws.com:5432/dkboa09k20pha'),
+    "default": dj_database_url.config(default='sqlite:///db.sqlite3'),
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators

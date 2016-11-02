@@ -15,4 +15,4 @@ pytest-django==3.0.0
 pytest-json==0.4.0
 selenium==3.0.1
 six==1.10.0
-splinter==0.7.4
+splinter==0.7.5
