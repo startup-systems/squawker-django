@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseBadRequest
-from squawks.models import Squawk
+from .models import Squawk
 from .forms import SquawkForm
 
 
