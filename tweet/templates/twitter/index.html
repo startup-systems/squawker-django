@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Squawker using Django</title>
+</head>
+
+<body>
+    <form action="{% url 'tweet:index' %}" method="post">
+        {% csrf_token %} {{ form }}
+        <button type="submit">squawk</button>
+    </form>
+    {% if has_next %}
+    <a href="{% url 'tweet:index' next_page %}">next page</a> {% endif %} {% if has_prev %}
+    <a href="{% url 'tweet:index' prev_page %}">previous page</a> {% endif %}
+    <p>{{total}} squawks squawked</p>
+    {% if squawks %}
+    <ul>
+        {% for item in squawks %}
+        <li>{{ item.message }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>no squawks here!</p>
+    {% endif %} {% if has_next %}
+    <a href="{% url 'tweet:index' next_page %}">next page</a> {% endif %} {% if has_prev %}
+    <a href="{% url 'tweet:index' prev_page %}">previous page</a> {% endif %}
+</body>
