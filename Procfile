@@ -1,1 +1,1 @@
-web: python manage.py run_gunicorn
+web: gunicorm manage.py:a[]
