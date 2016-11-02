@@ -9,7 +9,7 @@
 				{% csrf_token %}
 				<div>
 					<h1>Squawker</h1>
-					<label for="msg">What's New?</label>
+					<label>What's New?</label>
 				</br>
 					<textarea id="get_posts" name="get_posts" maxlength="140"></textarea>
 				</div>
@@ -18,12 +18,9 @@
 				</div>
 			</form>
 		</div>
-		<div id="showMsg">
-			<label for="post">Posts</label>
+		<div>
 			{% for item in squawkers %}
-			<div id="show">
-				{{ item.message }}
-			</div>
+				<li> {{ item.message }} </li>
 			{% endfor %}
 		</div>
 	</body>
