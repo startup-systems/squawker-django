@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.template import loader
-from .models import tweet_posts
+from .models import Posts
 from datetime import datetime
 
 
@@ -14,7 +14,7 @@ def index(request):
         content = request.POST['input']
         if len(content) > 140:
             return HttpResponseBadRequest()
-    tweet_posts(post_text=content, post_time=datetime.now()).save()
-    latest_posts = tweet_posts.objects.order_by('-post_time')
+    Posts(post_text=content, post_time=datetime.now()).save()
+    latest_posts = Posts.objects.order_by('-post_time')
     context = {'latest_posts': latest_posts}
     return render(request, 'tweet/index.html', context)
