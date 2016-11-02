@@ -1,6 +1,5 @@
 # add this near the top
-import dj_database_url
-import os
+import dj_database_url, os
 
 # replace the DATABASES config
 DATABASES = {
