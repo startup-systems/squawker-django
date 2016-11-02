@@ -3,6 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadReque
 from .models import squawkText
 from django.urls import reverse
 
+
 def index(request):
     if (request.method == 'POST'):
         squawkcaption = request.POST['caption']
