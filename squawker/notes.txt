@@ -1,0 +1,7 @@
+#configure secret key
+heroku config:set SECRET_KEY ...
+
+#caps theorem
+#basic web dev - CA
+#big data - CP
+#mass social media - AP

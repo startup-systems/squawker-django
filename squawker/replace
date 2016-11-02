@@ -1,0 +1,15 @@
+    <div class="row">
+      <div class="twelve column">
+        <form>
+        {% if currPage != 1 %}
+        <label>Previous Page</label>
+<!--        <a type="submit" id="Prev" name="Prev" href="{% url 'page' page_num=currPage|add:"-1" %}">Prev</a>-->
+        {%  endif %}
+
+        {% if last == False %}
+        <label>Next Page</label>
+<!--        <a type="submit" id="Next" name="Next" href="{% url 'page' page_num=currPage|add:"1" %}">Next </a>-->
+        {% endif %}
+        </form>
+      </div>
+    </div>
