@@ -1,1 +1,1 @@
-web: gunicorm manage.py:a[]
+web: gunicorn squawker.wsgi.application.wsgi:application --log-file -
