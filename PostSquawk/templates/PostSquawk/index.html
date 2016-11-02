@@ -6,12 +6,12 @@
 <body>
     <ul>
         {% for squawk in squawks %}
-            <li> {{item}} </li>
+            <li> {{squawk.msg}} </li>
         {% endfor %}
     </ul>
     <form action="{% url 'index' %}" method="post">
         {% csrf_token %}
-        SquawkPost: <input type="text" name="post" maxlength="140">
+        <input id="msg" name="msg" maxlength="140">
         <input type="submit" value="Submit">
     </form>
 </body>
