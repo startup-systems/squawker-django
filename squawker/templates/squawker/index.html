@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block body %}
+<div>
+    <form action="/add-squawk/" method="post">{% csrf_token %}
+        <div>
+            <label for="squawk_text">Squawker like a boss here: </label>
+            <input type="text" name="squawk_text" pattern=".{1,140}" size="100" placeholder="Type your messsage here" oninvalid="alert('Max length: 140 characters')">
+        </div>
+        <input type="submit" value="submit">
+    </form>
+</div>
+
+<div>
+    <div >
+        <h2>
+            Your squawks history {{ context }}
+        </h2>
+    </div>
+
+    <div>
+        {% for squawk in squawks %}
+        <blockquote>
+          [{{ squawk.post_date }}] {{ squawk.post_text }}
+        </blockquote>
+        {% endfor %}
+    </div>
+</div>
+</div>
+
+{% endblock %}
