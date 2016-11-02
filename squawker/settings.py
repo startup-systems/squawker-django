@@ -28,7 +28,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '*'
-#   'jc3256-squawker.herokuapp.com'
 ]
 
 
