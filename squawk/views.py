@@ -28,7 +28,7 @@ def index(request, num="1"):
 
     squawkers = Squawk.objects.order_by('-create_at')[offset:limit]
 
-    if len(squawkers) == 0:
+    if num > last_page:
         raise Http404("Page does not exist")
 
     context = {
