@@ -14,4 +14,4 @@ def root(request):
             return HttpResponseBadRequest("Error: Message Exceeded Max Length of 140")
 
     squawkers = Squawk.objects.order_by('-created')
-    return render(request, "index.html", {"squawks":squawkers})
+    return render(request, "index.html", {"squawks": squawkers})
