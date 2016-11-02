@@ -22,7 +22,7 @@
 {% if prev > 0  %}
 <a href="{% url 'indexpage' prev %}">Prev</a>
 {% endif %}
-{% if next < last_page  %}
+{% if next <= last_page  %}
 <a href="{% url 'indexpage' next %}">Next</a>
 {% endif %}
 </div>
