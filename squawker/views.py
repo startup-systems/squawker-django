@@ -11,9 +11,9 @@ def index(request):
 
     return render(request, "base.html",
                   {'title': "Squawk Posted",
-                  'max_len': MAX_LEN,
-                  'squawks': squawks
-                  })
+                   'max_len': MAX_LEN,
+                   'squawks': squawks
+                   })
 
 
 def isValid(squawk):
