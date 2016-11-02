@@ -9,12 +9,13 @@
 			<form action="{% url 'index' %}" method="POST">
 				{% csrf_token %}
 				<div>
-					<h1>Squawker</h1>
-					<label>What's New?</label>
-			<textarea id="get_posts" name="get_posts" maxlength="140"></textarea>
+					<h1 style="text-align: center;">Squawker</h1>
+					<label style="text-align: center;">What's New?</label>
+					<p>
+			<textarea id="get_posts" name="get_posts" maxlength="140" style="text-align: center;"></textarea>
 				</div>
 				<div>
-				<button type="submit">Submit</button>
+				<button type="submit"style="left: 300px;">Submit</button>
 				</div>
 			</form>
 		</div>
