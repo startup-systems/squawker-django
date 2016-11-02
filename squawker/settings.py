@@ -26,7 +26,7 @@ SECRET_KEY = '+wg@_^7q-o&s$o(pzsa5h73(y-kqx8j7fjaxh%s0&!q^+7-a($'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [u'bk494-squawker.herokuapp.com' ]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -76,13 +76,13 @@ WSGI_APPLICATION = 'squawker.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-'''DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-}'''
-
+}
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -92,7 +92,7 @@ DATABASES = {
         'HOST': 'ec2-54-163-226-121.compute-1.amazonaws.com',
         'PORT': '5432',
     }
-}
+}'''
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
