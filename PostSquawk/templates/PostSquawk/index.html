@@ -11,7 +11,8 @@
     </ul>
     <form action="{% url 'index' %}" method="post">
         {% csrf_token %}
-        <input id="msg" name="msg" maxlength="140">
+        <h1> What's your squawk? </h1>
+        <textarea type="text" name="msg" maxlength="140"></textarea>
         <input type="submit" value="Submit">
     </form>
 </body>
