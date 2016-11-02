@@ -26,7 +26,7 @@ SECRET_KEY = '5()=wf7im1mep#td_ph01$&y0b)kg2^izopg+c&c(k013d9li3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -77,6 +77,8 @@ WSGI_APPLICATION = 'squawker.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         "default": dj_database_url.config(default='sqlite:///db.sqlite3'),
     }
 }
