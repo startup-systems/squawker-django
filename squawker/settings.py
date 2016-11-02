@@ -38,7 +38,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-                  'squawker_app.apps.SquawkerAppConfig',
+                  'squawker2.apps.Squawker2Config',
                   'django.contrib.admin',
                   'django.contrib.auth',
                   'django.contrib.contenttypes',
