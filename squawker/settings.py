@@ -77,9 +77,6 @@ WSGI_APPLICATION = 'squawker.wsgi.application'
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
 DATABASES = {
-    
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     "default": dj_database_url.config(default='sqlite:///db.sqlite3'),
 }
 
