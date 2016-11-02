@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render, redirect
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadRequest
 from .models import Squawks
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
@@ -15,6 +15,9 @@ def index(request):
 
 @csrf_exempt
 def add(request):
+    text = request.POST['new_body']
+    if(len(text) > 140):
+        return HttpResponseBadRequest('Not allowed')
     s = Squawks(squawk=request.POST['new_body'])
     s.save()
     return HttpResponseRedirect(reverse('index', ))
