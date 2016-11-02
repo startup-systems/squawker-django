@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-#The include() function allows referencing other URLconfs.
+# The include() function allows referencing other URLconfs.
 urlpatterns = [
     url(r'^', include('squawker2.urls')),
     url(r'^admin/', admin.site.urls),

@@ -1,5 +1,4 @@
 """squawker URL Configuration
-    
     The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.10/topics/http/urls/
     Examples:
@@ -17,7 +16,4 @@ from django.conf.urls import url
 from . import views
 
 app_name = 'squawker'
-urlpatterns = [
-               url(r'^$', views.index, name='index'),
-               url(r'^add/$', views.add_squawker, name='add'),
-               ]
+urlpatterns = [url(r'^$', views.index, name='index'), url(r'^add/$', views.add_squawker, name='add'),]
