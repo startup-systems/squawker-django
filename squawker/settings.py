@@ -25,7 +25,7 @@ SECRET_KEY = 'r=35w^ah85=%h0$$oxd(r4!98ln-p09z@aome$t)+0^f2o-eg5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['uuv2-squawker.herokuapp.com']
+ALLOWED_HOSTS = ['0.0.0.0','uuv2-squawker.herokuapp.com']
 
 
 # Application definition
