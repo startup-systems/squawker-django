@@ -7,7 +7,7 @@ from .forms import SquawkForm
 import time
 from math import ceil
 
-ENTRIES_PER_PAGE = 2
+ENTRIES_PER_PAGE = 20
 
 def index(request, num="1"):
     num=int(num)
