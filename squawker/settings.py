@@ -25,7 +25,7 @@ SECRET_KEY = 't31ts^42ud1vei8pqi%18o$id*3f^gbwzbd^p3@lw%jt&xp*jz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', 'cw777-squawker.herokuapp.com']
+ALLOWED_HOSTS = ['cw777-squawker.herokuapp.com']
 
 
 # Application definition
@@ -46,6 +46,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]

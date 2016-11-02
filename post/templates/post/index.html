@@ -5,7 +5,7 @@
 	<head>
 	<body>
 		<div id="postMsg">
-			<form action="{% url 'index' %}" method="POST">
+			<form action="{% url 'index' %}" method="post">
 				{% csrf_token %}
 				<div>
 					<h1>Squawker</h1>
@@ -20,7 +20,7 @@
 		</div>
 		<div id="showMsg">
 			<label for="post">Posts</label>
-			{% for item in new_posts %}
+			{% for item in squawkers %}
 			<div id="show">
 				{{ item.message }}
 			</div>
