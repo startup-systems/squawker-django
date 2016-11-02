@@ -27,7 +27,7 @@ SECRET_KEY = 'sdw1(i9nans8o4&v%y6p&4ypehorr&4iwf1!17$75hn)i_-wv$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cx87-squawker.herokuapp.com']
 
 
 # Application definition
