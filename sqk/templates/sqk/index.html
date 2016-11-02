@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>squawker</title>
+	<head>
+	<body>
+		<div id="postMsg">
+			<form action="{% url 'index' %}" method="POST">
+				{% csrf_token %}
+				<div>
+					<h1>This is Squawker!!!</h1>
+					<label for="msg">Write Something</label>
+				</br>
+					<textarea id="get_posts" name="get_posts" maxlength="140"></textarea>
+				</div>
+				<div>
+				<button type="submit">Post</button>
+				</div>
+			</form>
+		</div>
+		<div id="showMsg">
+			<label for="post">Posts</label>
+			{% for item in new_posts %}
+			<div id="show">
+				{{ item.message }}
+			</div>
+			{% endfor %}
+		</div>
+	</body>
+</html>
