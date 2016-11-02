@@ -90,6 +90,7 @@ DATABASES = {
     "default": dj_database_url.config(default='sqlite:///db.sqlite3'),
 }
 
+
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 
