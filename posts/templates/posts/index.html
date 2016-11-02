@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to Squawkers!!</title>
+</head>
+<body>
+	<div id="postMsg">
+		<form action="{% url 'index' %}" method="POST">
+			{% csrf_token %}
+			<div>
+				<h1>Squawkers!</h1>
+				<label for="msg">Put your Squawks here!</label>
+			</br>
+				<textarea type="text" name="squawks" maxlength="140"></textarea>
+			</div>
+			<div class= "button">
+				<input type= "submit">
+			</div>
+		</form>
+	</div>
+	<div id="showMsg">
+		<label for="post">Squawks below : </label>
+		{% for item in squawkss %}
+		<div id="show">
+			{{item.squawkers_text}}
+		</div>
+		{% endfor %}
+	</div>
+	</body>
+</html>
