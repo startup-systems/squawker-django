@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect,HttpResponseBadRequest
 from .models import postSquawk
 
 
@@ -8,7 +8,7 @@ def index(request):
         newSquawk = request.POST.get('content')
         # post length check
         if len(newSquawk) > 140:
-            return "Input should be less than 140 characters!", 400
+            return HttpResponseBadRequest()
         else:
             newPost = postSquawk(message=newSquawk)
             newPost.save()
