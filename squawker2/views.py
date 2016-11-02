@@ -13,11 +13,10 @@ def index(request):
 
 
 def add_squawker(request):
-    response = ""
     s = Squawks(squawk=request.POST['post_text'])
     if len(s.squawk) > 140:
-        response.status_code = 400
         response = HttpResponse('Invalid, please restrict your chars <= 140 ')
+        response.status_code = 400
         return response
     else:
         s.save()
