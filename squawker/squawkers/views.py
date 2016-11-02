@@ -5,7 +5,7 @@ from django.template import RequestContext, loader
 from .models import Posts
 
 
-def index(request):    
+def index(request):
     if request.method == 'POST':
         newpost = request.POST.get('user_post')
         if len(newpost) > 140:
