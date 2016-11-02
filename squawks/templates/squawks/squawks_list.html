@@ -1,3 +1,10 @@
 <html>
-  <p>Hi there!</p>
+  <head>
+    <title>Squawker</title>
+  </head>
+  <body>
+    {% for squawk in squawks %}
+      <p>{{ squawk.text }}</p>
+    {% endfor %}
+  </body>
 </html>
