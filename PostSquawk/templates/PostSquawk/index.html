@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title> Squawks </title>
+    </head>
+<body>
+    <ul>
+        {% for squawk in squawks %}
+            <li> {{item}} </li>
+        {% endfor %}
+    </ul>
+    <form action='/postSquawk' method="post">
+        {% csrf_token %}
+        SquawkPost: <input type="text" name="post" maxlength="140">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
