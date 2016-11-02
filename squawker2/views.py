@@ -22,6 +22,3 @@ def add_squawker(request):
     else:
         s.save()
     return index(request)
-
-
-
