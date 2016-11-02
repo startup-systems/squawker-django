@@ -21,5 +21,5 @@ def submitNewSquawk(request):
     s = Squawks(submitTime=time, squawks=newSquawk)
     if len(newSquawk) > 140:
         return HttpResponseBadRequest('Squawk is longer than 140 characters!')
-    s.save() 
+    s.save()
     return redirect('index')
