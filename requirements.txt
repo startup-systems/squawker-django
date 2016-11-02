@@ -1,7 +1,13 @@
+cssselect==1.0.0
 dj-database-url==0.4.1
 Django==1.9.11
 gunicorn==19.6.0
+lxml==3.6.4
+psycopg2==2.6.2
+py==1.4.31
+pytest==3.0.3
+pytest-json==0.4.0
+selenium==3.0.1
+six==1.10.0
+splinter==0.7.4
 whitenoise==3.2.2
-psycopg2
-pytest
-git+https://github.com/startup-systems/splinter.git@ba3afc8a0750dcfea096f8f89adb58f8f8d78276#egg=splinter[django]
