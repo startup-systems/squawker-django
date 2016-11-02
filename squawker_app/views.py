@@ -11,7 +11,7 @@ def index(request):
 
 
 def add_squawker(request):
-    q = Squawks(squawk=request.POST['content'])
+    q = Squawks(squawk=request.POST["content"])
     if len(q.squawk) > 140:
         response = HttpResponse('Please enter less than 140 characters')
         response.status_code = 400
