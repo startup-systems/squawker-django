@@ -1,0 +1,26 @@
+<DOCTYPE HTML>
+<html>
+<head>
+        <title>Elya's Squawker</title>
+</head>
+
+<body>
+<form action="{% url 'index' %}" method="post">
+{% csrf_token %}
+<div>
+                <label>Enter your post:</label>
+            <br>
+                <input id="msg" name="msg" maxlength="140"></input>
+                </div>
+                <div class="button">
+                        <button type="submit">Post</button>
+                </div>
+        </form>
+<p> Here's a list of previous squawks:</p>
+<ul>
+    {% for row in rows %}
+        <li> {{row.squawk_text}}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
