@@ -11,11 +11,11 @@ def post_list(request):
         content = request.POST['input']
         if len(content) > 140:
             return HttpResponseBadRequest()
-        else: 
+        else:
             Post(content=content, timestamp=datetime.now()).save()
     queryset = Post.objects.all().order_by('-id')
     context = {
         "obj_lists": queryset,
         "title": "Squawker",
-        }
+    }
     return render(request, "index.html", context)
