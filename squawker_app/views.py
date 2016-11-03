@@ -11,7 +11,7 @@ def index(request):
         	error = "Please enter the message that the maximum length should be less than 140 characters"
         	return HttpBadResponse('400')
         else:
-            msg = Squawker(post=message)
+            msg = Squawker(postmsg=message)
             msg.save()
     postMsg = Squawker.objects.order_by('id').reverse()[0:20]
     context = {'postMsg': postMsg}
