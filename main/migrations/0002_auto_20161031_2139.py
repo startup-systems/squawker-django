@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 
 from django.db import migrations
 
+
 class Migration(migrations.Migration):
 
     dependencies = [
@@ -16,4 +17,5 @@ class Migration(migrations.Migration):
             old_name='post',
             new_name='message',
         ),
+        
     ]

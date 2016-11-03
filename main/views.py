@@ -2,9 +2,6 @@ import time
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Posts
-
-
-
 def index(request):
     if request.method == 'POST':
         post = request.POST['text_box_input']
@@ -18,3 +15,4 @@ def index(request):
     feed = Posts.objects.order_by('-timestamp')[:maxP]
     context = {'feed': feed}
     return render(request, 'main/index.html', context)
+    
