@@ -18,9 +18,13 @@
     </form>
     <p> Show Squawks</p>
     <ul>
-       {% for squawk in squawks %}
-           <li> {{squawks.msg}}</li>
-       {% endfor %}
+    {% if squawks %}
+        {% for squawk in squawks %}
+           <li> {{squawk.msg}}</li>
+        {% endfor %}
+    {% else %}
+        <li> no squawks </li>
+    {% endif %}
     </ul>
     </body>
 </html>
