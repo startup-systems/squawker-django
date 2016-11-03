@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Squawker
 # Create your views here.
 
+
 def index(request):
     if request.method == "POST":
         message = request.POST["squawkerMessage"]
@@ -15,4 +16,3 @@ def index(request):
     postMsg = Squawker.objects.order_by('id').reverse()[0:20]
     context = {'postMsg': postMsg}
     return render(request, 'index.html', context)
-	
