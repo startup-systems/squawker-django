@@ -26,12 +26,13 @@ SECRET_KEY = '$$)^2$h0$)+7d9q&+2n_xkj&77+xtgb4gkk8!x%%w8)*-xkcd-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['jfl95-squawker.herokuapp.com']
 
 
 # Application definition
 
 INSTALLED_APPS = (
+    'squawker_dj',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
