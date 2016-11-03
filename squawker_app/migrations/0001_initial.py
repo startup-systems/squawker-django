@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('postmsg', models.CharField(max_length=140)),
-                ('timestamp', models.DateTimeField()),
+                ('time', models.DateTimeField()),
             ],
         ),
     ]
