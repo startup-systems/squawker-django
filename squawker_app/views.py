@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Squawker
 # Create your views here.
 
+
 def index(request):
     if request.method == "POST":
         message = request.POST["squawkerMessage"]
