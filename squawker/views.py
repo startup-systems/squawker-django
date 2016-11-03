@@ -33,7 +33,7 @@ def page(request, page_num):
         firstPage = True if page_num == 1 else False
         lastPage = True if squawk_list[len(squawk_list) - 1].id == 1 else False
     else:
-        firstPage = lastPage = True;
+        firstPage = lastPage = True
     # Store page context
     context = {'squawks': squawk_list,
                'firstPage': firstPage,
