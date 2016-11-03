@@ -17,8 +17,4 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^', include('squawker_app.urls')),
-<<<<<<< HEAD
     url(r'^admin/', admin.site.urls)]
-=======
-    url(r'^admin/', admin.site.urls)]
->>>>>>> a9c5d32720f4394d8a904a85c9c14383829cd638
