@@ -11,9 +11,11 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+import dj_database_url
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -26,8 +28,6 @@ SECRET_KEY = 'vc808r1ueov37b-42al+$-ul*$x76vfgk4^0(v0+(yc%p^6-m1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-
 
 # Application definition
 
@@ -71,10 +71,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'squawker.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
-
 
 
 DATABASES = {
@@ -84,7 +82,6 @@ DATABASES = {
     }
 }
 
-import dj_database_url
 # Update database configuration with $DATABASE_URL.
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
@@ -107,7 +104,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
@@ -120,7 +116,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/

@@ -7,14 +7,15 @@ from main.models import Squawk
 # Create your views here.
 COUNT = 20
 
+
 def index(request):
     page_number = 1
     if "page" in request.GET:
         page_number = int(request.GET["page"])
-    
+
     if request.method == "POST":
         text = request.POST["text"]
-        if len(text)>140:
+        if len(text) > 140:
             return HttpResponseBadRequest("LENGHT OF TEXT BIGGER THAN 140!")
         squawk = Squawk(message=text)
         squawk.save()
@@ -24,5 +25,6 @@ def index(request):
         p = Paginator(squawks, COUNT)
         page = p.page(page_number)
         objects = page.object_list
-        return render(request, "show_entries.html", {"entries":objects, "has_previous":page.has_previous(), "has_next":page.has_next(), "page":page_number})
-    
+        return render(request, "show_entries.html",
+                      {"entries": objects, "has_previous": page.has_previous(), "has_next": page.has_next(),
+                       "page": page_number})
