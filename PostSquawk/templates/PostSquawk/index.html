@@ -1,19 +1,26 @@
-<!DOCTYPE html>
+<DOCTYPE HTML>
 <html>
-    <head> 
-        <title> Squawks </title>
+    <head>
+            <title>Post All Squawks</title>
     </head>
-<body>
-    <ul>
-        {% for squawk in squawks %}
-            <li> {{squawk.msg}} </li>
-        {% endfor %}
-    </ul>
+ 
+    <body>
     <form action="{% url 'index' %}" method="post">
-        {% csrf_token %}
-        <h1> What's your squawk? </h1>
-        <textarea type="text" name="msg" maxlength="140"></textarea>
-        <input type="submit" value="Submit">
+    {% csrf_token %}
+        <div>
+            <label>Enter your squawk:</label>
+            <br>
+            <textarea id="msg" name="msg" maxlength="140"></textarea>
+        </div>
+        <div class="button">
+            <button type="submit">Post</button>
+        </div>
     </form>
-</body>
+    <p> Show Squawks</p>
+    <ul>
+       {% for squawks in squawks %}
+           <li> {{squawks.msg}}</li>
+       {% endfor %}
+    </ul>
+    </body>
 </html>
