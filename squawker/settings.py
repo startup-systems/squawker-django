@@ -32,7 +32,7 @@ SECRET_KEY = '-s!g6(rvn$^4ut1bhht+2^mq!cxwc5@jz@*-qz(-cbjx0ff0c*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [mz475-squawker.herokuapp.com]
+ALLOWED_HOSTS = ['mz475-squawker.herokuapp.com']
 
 
 # Application definition
