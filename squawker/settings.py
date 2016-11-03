@@ -27,7 +27,7 @@ SECRET_KEY = '0=_)a(piooo!#+2+uj5t4w0j3o2vwb*r+zfe(oxiik8*-6cdrr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -79,7 +79,6 @@ WSGI_APPLICATION = 'squawker.wsgi.application'
 DATABASES = {
     "default": dj_database_url.config(default='sqlite:///db.sqlite3'),
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
