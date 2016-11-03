@@ -5,7 +5,7 @@ from django.core.paginator import Paginator
 from main.models import Squawk
 
 # Create your views here.
-COUNT = 10
+COUNT = 20
 
 def index(request):
     page_number = 1
