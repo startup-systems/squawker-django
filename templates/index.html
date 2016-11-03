@@ -1,17 +1,15 @@
 <!--{extends "layout.html" %}-->
 {% block body %}
-    <form action="" method=post class=add-posts> {%csrf_token %}
-      {{form.as_p}}
-        <input type=submit value=Share>
+    <form action="" method=post> {%csrf_token %}
+        <textarea name="input" type="text" maxlength="140" required></textarea>
+         <input type=submit value=Share>
     </form>
   <ul class=posts>
   {% for post in obj_lists %}
-    <li><p>posts:</p>
+    <li><p>post:</p>
     {{ post.title }}</br>
     {{ post.content}}</br>
     {{post.timestamp}}</br>
-    {{post.updated}}</br>
-    {{post.id}}</br>
   {% endfor %}
   </ul>
 {% endblock %}
