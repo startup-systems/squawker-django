@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Squawker APP</title>
+	<head>
+	<body>
+		<div id="postMsg">
+			<form action="{% url 'index' %}" method="POST">
+				{% csrf_token %}
+				<div>
+					<h1>Welcome to Squawker App!</h1>
+					<label for="msg">Write your message here</label>
+					<textarea id="get_posts" name="get_posts" maxlength="140"></textarea>
+				</div>
+				<div>
+				<button type="submit">Post It!</button>
+				</div>
+			</form>
+		</div>
+		<div id="showMsg">
+			<label for="post">Posts</label>
+			{% for item in new_posts %}
+			<div id="show">
+				{{ item.message }}
+			</div>
+			{% endfor %}
+		</div>
+	</body>
+</html>
