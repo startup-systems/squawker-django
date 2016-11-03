@@ -10,8 +10,8 @@ import time
 
 URL = '/'
 PAGE_SIZE = 20
-# match case-insensitively
-# http://stackoverflow.com/a/1625859/358804
+
+
 NEXT_XPATH = "//a[contains(translate(text(),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ'), 'NEXT')]"
 
 
