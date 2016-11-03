@@ -15,9 +15,4 @@ def index(request):
             msg.save()
     postMsg = Squawker.objects.order_by('id').reverse()[0:20]
     context = {'postMsg': postMsg}
-<<<<<<< HEAD
     return render(request, 'index.html', context)
-=======
-    return render(request, 'index.html', context)
-	
->>>>>>> a9c5d32720f4394d8a904a85c9c14383829cd638
