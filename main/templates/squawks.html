@@ -4,11 +4,9 @@
     <form action="/" method=post class=add-entry>
 
     {% csrf_token %}
-      <dl>
-        <dt>Write your squawk:
-        <dd><textarea name=text rows=3 cols=40 maxlength="140"></textarea>
-        <dd><input type=submit value=Squawk>
-      </dl>
+      Write your squawk:<br>
+        <textarea name=text rows=3 cols=40 maxlength="140"></textarea><br>
+        <input type=submit value=Squawk>
 
     </form>
 
