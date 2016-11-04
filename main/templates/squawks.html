@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <form action="/" method=post class=add-entry>
+
+    {% csrf_token %}
+      <dl>
+        <dt>Write your squawk:
+        <dd><textarea name=text rows=3 cols=40 maxlength="140"></textarea>
+        <dd><input type=submit value=Squawk>
+      </dl>
+
+    </form>
+
+  <ul class=entries>
+{% if entries %}
+  {% for entry in entries %}
+    <li><h2>{{ entry.message }}</h2>
+  {% endfor %}
+{% else %}
+    <li><em>Nothing to show here.</em>
+{% endif%}
+  </ul>
+  {% if has_previous %}
+  <a href="/?page={{ page|add:'-1' }}">Back</a>
+  {% endif %}
+  {% if has_next %}
+  <a href="/?page={{ page|add:'1' }}">Next</a>
+  {% endif %}
+{% endblock %}
