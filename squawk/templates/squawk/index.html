@@ -12,14 +12,12 @@
     </form>
 
     {% if squawks %}
-        <ul>
             {% for item in squawks %}
-                <li>{{item}}</li>
+              <p>  {{item}} </p>
             {% endfor %}
-        </ul>
     {% endif %}
 
-    <p>{{total}} squawks available</p>
+    <p>Squawks available : {{total}} </p>
 
     {% if has_next %}
         <a href="{% url 'squawk:index' next_page %}">Next</a>
