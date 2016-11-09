@@ -1,0 +1,7 @@
+{% extends 'homepage/header.html' %}
+
+{% block content %}
+	{% for s in object_list %}
+		<div>{{ s.txt }}</div>
+	{% endfor %}
+{% endblock %}
