@@ -8,3 +8,5 @@ __pycache__/
 *.sqlite3
 *.log
 local_settings.py
+.DS_Store
+venv/
