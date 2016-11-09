@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang= "en">
+<head>
+    <title>Squawker Homepage</title>
+<head>
+<body>
+    <form action="{% url 'index' %}" method="POST">
+        {% csrf_token %}
+        <div>
+            <label for="post">Squawker:<label>
+            <textarea maxlength="140" id="post" name="user_post"></textarea>
+        <div>
+        <div class="button">
+        <button type="submit">Posts!</button>
+        <div>
+        <div>
+        <ul id="post">
+            {% for item in post_list %}
+            <li>{{item}}</li>
+            {% endfor %}
+            <ul>
+        <div>
+</body>
+</html>
+
