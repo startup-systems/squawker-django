@@ -1,0 +1,15 @@
+cssselect==1.0.0
+dj-database-url==0.4.1
+Django==1.10.3
+gunicorn==19.6.0
+lxml==3.6.4
+pep8==1.7.0
+psycopg2==2.6.2
+py==1.4.31
+pytest==3.0.3
+pytest-django==3.0.0
+pytest-json==0.4.0
+selenium==3.0.1
+six==1.10.0
+whitenoise==3.2.2
+splinter[django]~=0.7.5

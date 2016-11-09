@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+            <title>Post All Squawks</title>
+    </head>
+ 
+    <body>
+    <form action="{% url 'index' %}" method="post">
+    {% csrf_token %}
+        <div>
+            <label>Enter your squawk:</label>
+            <br>
+            <textarea id="msg" name="msg" maxlength="140"></textarea>
+        </div>
+        <div class="button">
+            <button type="submit">Post</button>
+        </div>
+    </form>
+    <p> Show Squawks</p>
+    <ul>
+    {% if squawks %}
+        {% for squawk in squawks %}
+           <li> {{squawk.msg}}</li>
+        {% endfor %}
+    {% else %}
+        <li> no squawks </li>
+    {% endif %}
+    </ul>
+    </body>
+</html>
