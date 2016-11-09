@@ -26,13 +26,13 @@ SECRET_KEY = '5=627)+$t)@^awr*4y08dxglv1j2#_^ffhsg*=0_qf4o-g4$%k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['fc333-squawker.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'tweet.apps.TweetConfig',
+    'tweet',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
