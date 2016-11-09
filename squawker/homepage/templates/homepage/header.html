@@ -8,15 +8,17 @@
 	</head>
 	<body>
 		<div class="panel-body" style="padding: 50px">
-			{% block content %}
-			{% endblock %}
+			{% for s in object_list %}
+				<div>{{ s.txt }}</div>
+			{% endfor %}
 		</div>
 		
 		<div style="padding: 50px">
-			<form class="form-inline" method='post' action=''>
+			<form class="form-inline" method='post' action="{% url 'squawker:home'%}">
+				{% csrf_token %}
 				<div class="form-group">
 					Enter Squawk: 
-					<input class="form-control" type="text" maxlength="140" name = "newsquawk" required />
+					<input class="form-control" type="text" maxlength="140" name = "content" required />
 					<input class="btn btn-primary" type="submit" class="form-control" value="Submit" />
 				</div>
 			</form>
