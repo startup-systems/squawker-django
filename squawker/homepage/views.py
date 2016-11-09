@@ -6,6 +6,7 @@ from django.views.generic import RedirectView
 from .models import Squawk
 
 
+
 def index(request):
     object_list = {'All_squawks': Squawk.objects.order_by('-date')}
     return render(request, 'homepage/home.html', object_list)
