@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Homepage of Squawker</title>
+	</head>
+	<body>
+		<div class="postMsg">
+			<form action="{% url 'index' %}" method="POST">
+			{% csrf_token %}
+				<div>
+					Your Message
+					<textarea maxlength="140" id="message" name="usr_message"></textarea>
+				</div>
+				<div class="button">
+					<button type="submit">Post your message</button>
+				</div>
+			</form>
+		</div>
+		<br>
+		<br>
+		<div class="getMsg">
+			<p>These are messages you have post from newest to oldest</p>
+			{% for msg in posts %}
+				<div class="preMsg">
+					<p>{{ msg.post }}</p>
+				</div>
+			{% endfor %}
+		</div>
+	</body>
+</html>
