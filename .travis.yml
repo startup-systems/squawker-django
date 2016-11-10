@@ -11,3 +11,5 @@ script:
 - cat report.json
 - echo '</MQkrXV>'
 - echo "travis_fold:end:SCRIPT folding ends"
+env:
+- SECRET_KEY='mo!11ai)*ej%ae4tw+@29&+gdrc6ust#62et*_1-dq#+%jivla'
