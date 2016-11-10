@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+</head>
+<style>
+
+/*body {
+  padding-top: 50px;
+}*/
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+</style>
+<div class="starter-template">
+	<h1>Squawker</h1>
+
+<form action="" method="POST">
+		<label> Squawk Here</label>
+		<input type="text" rows="4" cols="50" name="name" value='' maxlength="140" autofocus>
+		<input type="submit" value="Lets build it">
+		{% csrf_token %} 
+</form>
+
+{% block content %}
+<ul class="list-group">
+	{% for elem in squawks %}
+	<li class="list-group-item">{{elem}}</li>
+	{%endfor%}
+</ul>
+{% endblock %}
+</div>
+
+</html>
+
