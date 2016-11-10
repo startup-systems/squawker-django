@@ -1,0 +1,32 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Squawker</title>
+</head>  
+  <div>
+    <form action="{% url 'squawker:add'%}" method="post">
+    {% csrf_token %}
+      <dl>
+        <dt><h3>Enter New Squawk:</h3>
+        <dd><input type="text" size="150" name="squawker" required placeholder="Enter a valid squawk less than 140 characters" maxlength="140">
+        <dd><input type="submit" value="Submit">
+      </dl>
+    </form>
+  </div>
+  <div>
+      <h3>
+        Previous squawks:
+      </h3>
+{% if latest_squawks %}
+    <ul>
+    {% for question in latest_squawks %}
+        <li>{{ question.squawks_text }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+	</div>
+	</div>
