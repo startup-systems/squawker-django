@@ -20,7 +20,7 @@ In this assignment, you will rebuild [Squawker](https://github.com/startup-syste
             * Responds with a status code of 400 if the form is submitted with invalid data.
     * Passes Code Climate checks (**5%**)
 * Works without JavaScript
-* Deployed to Heroku at `<NETID>-squawker.herokuapp.com` (**20%**)
+* Deployed to Heroku at `lw642-squawker.herokuapp.com` (**20%**)
 
 Visual styling is not considered as part of the score, though feel free to get creative! In other words, feel free to make your site pretty, but not a problem if it isn't.
 
