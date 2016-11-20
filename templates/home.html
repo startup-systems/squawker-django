@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Squawker</title>
+</head>
+<body>
+	<form action="/" method="post">{% csrf_token %}
+		<div>
+        		<label for="msg">Message:</label>
+        		<textarea id="msg" name="squawk_msg" maxlength="140"></textarea>
+
+    		</div>
+		<div class="button">
+			<button type="submit">Post</button>
+		</div>
+
+	</form>
+
+	<br><br>
+
+	<div id="squawks">
+		{% if page > 1 %}
+			<a href="/?page={{ page|add:"-1" }}">Previous Page</a>
+			&nbsp
+		{% endif %}
+		<a href="/?page={{ page|add:"1" }}">Next Page</a>
+		<br>
+		{% for squawk in viewable_squawks %}
+		<br>
+		<div>{{ squawk.msg }}</div>
+		{% endfor %}
+	</div>
+
+</body>
+</html>
