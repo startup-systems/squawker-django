@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Squawker</title>
+</head>
+<body>
+ <form action = "{% url 'index' %}" method = "POST">
+    {% csrf_token %}
+    <div>
+        <label for="msg">New squawk:</label>
+        <textarea id="msg" name="new_squawk" maxlength="140">
+        </textarea>
+    </div>
+    <div class="button">
+        <button type="submit">Submit</button>
+    </div>
+    </form>
+{% if latest_squawk_list %}
+    <ul>
+    {% for squawk in latest_squawk_list %}
+        <li>{{squawk.squawk_text}} {{squawk.timestamp}}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No squawks are available.</p>
+{% endif %}
+</body>
+</html>
