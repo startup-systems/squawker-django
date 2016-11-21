@@ -1,0 +1,52 @@
+<head>
+<style>
+*:focus{
+    outline: none;
+}
+.squawk_text{
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.submit_button:hover{
+    background-color:blue;
+}
+
+.submit_button{
+    float:right;
+    cursor:pointer;
+    padding: 8px 15px;
+    border-radius: 6px;
+    border: none;
+    background-color: lightblue;
+}
+
+.squawks_table{
+    width: 33%;
+}
+
+.tablecell{
+    padding:25px 0px;
+    border-bottom: solid;
+    border-bottom-width: 1px;
+    text-align:center;
+    border-color: lightblue;
+}
+</style>
+</head>
+<body>
+<table align="center">
+    <form action="{% url 'squawk:index' %}" method="post">
+    {% csrf_token %}
+    <tr><td><textarea cols="47" rows="3" name="squawk" maxlength="140" placeholder="squawk" class="squawk_text"></textarea></td></tr>
+    <tr><td><input type = "submit" class="submit_button" value = "Squawk!"></td></tr>
+    </form>
+</table>
+<div>
+    <table align="center" class="squawks_table">
+    {% for i in squawks %}
+        <tr><td class="tablecell">{{ i.squawk }}</td></tr>
+    {% endfor %}
+    </table>
+</div>
+</body>
