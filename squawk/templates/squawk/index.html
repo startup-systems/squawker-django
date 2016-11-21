@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Squawker - Cloning Twitter since 2016</title>
+</head>
+
+<body>
+    <form action="{% url 'squawk:index' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <p><button type="submit">Squawk</button></p>
+    </form>
+
+    {% if squawks %}
+            {% for item in squawks %}
+              <p>  {{item}} </p>
+            {% endfor %}
+    {% endif %}
+
+    <p>Squawks available : {{total}} </p>
+
+    {% if has_next %}
+        <a href="{% url 'squawk:index' next_page %}">Next</a>
+    {% endif %}
+
+</body>
+</html>
