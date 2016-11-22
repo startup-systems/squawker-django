@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="static/style.css">
+
+<div id="page-wrap">
+
+	<head>
+		<title>My homepage</title>
+	</head>
+	<body>
+		<div class="postMsg">
+			<form action="{% url 'postMsg'%}" method="post">{% csrf_token %}
+					<div class="area">
+					<textarea maxlength="140" cols="50" rows="5" id="message" name="usr_message" style="border:double 4px #2980b9;"></textarea>
+				</div>
+				<div>
+					<button type="submit">Post your squawker</button>
+				</div>
+			</form>
+		</div>
+
+
+		<div class="getMsg">
+			<label for="previousMsg">The squawkers</label>
+			{% if get_squawks %}
+			{% for sq in get_squawks %}
+				<div class="sq">
+					<p style="font-size:26px">{{ sq.text }}</p>
+					<p style="font-size:18px">{{ sq.time }}</p>
+				</div>
+			{% endfor %}
+			{% endif %}
+		</div>
+	</body>
+	</div>
+</html>
