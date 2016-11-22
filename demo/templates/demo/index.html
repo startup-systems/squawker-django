@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Squawker</title>
+</head>
+
+<body>
+<div id="squawks">
+    <p>Totoal Squawks: {{numSquawks}}</p>
+    {% if havePre == 1 %}
+        <a href="/page/{{ pageN|add:-1 }}">Previous</a> {% endif %}
+    {% if haveNext == 1 %}
+        <a href="/page/{{ pageN|add:1 }}">Next</a>
+    {% endif %}
+    {% if squawk_list %}
+    <ol>
+        {% for squawk in squawk_list %}
+            <li>{{ squawk.squawk_text }}</li>
+        {% endfor %}
+    </ol>
+    {% endif %}
+</div>
+<br>
+<br>
+<form action="{% url 'add' %}" method="post">
+    {% csrf_token %}
+    <div>
+        <label for="msg">Say something:</label>
+        <br>
+        <textarea id="msg" name="squawk" maxlength="140"></textarea>
+    </div>
+    <div class="button">
+        <button type="submit">post</button>
+    </div>
+</form>
+</body>
+
+</html>
