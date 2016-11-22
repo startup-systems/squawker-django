@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<div id="input_squawker">
+			<form action="{% url 'index' %}" method="POST">
+			{% csrf_token %}
+				<input type="text" name="text_box_input" maxlength="140" placeholder="What's on your mind?" />
+				<input type="submit" value="Post">
+			</form>
+		</div>
+		{% for item in latest_posts %}
+		<div id="show_squawker">
+			{{ item.message }}
+		</div>
+		{% endfor %}
+	</body>
+</html>
+
+
