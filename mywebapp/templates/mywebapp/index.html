@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Squawker</title>
+</head>
+
+<body>
+    <form action="{% url 'mywebapp:index' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Post</button>
+    </form>
+
+    {% if has_next %}
+        <a href="{% url 'mywebapp:index' next_page %}">Next Page</a>
+    {% endif %}
+
+    {% if has_prev %}
+        <a href="{% url 'mywebapp:index' prev_page %}">Prev Page</a>
+    {% endif %}
+
+    <p>{{total}} squawks posted</p>
+
+    {% if squawks %}
+        <ul>
+            {% for item in squawks %}
+                <li>{{ item.msg }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No squawks posted!</p>
+    {% endif %}
+
+    {% if has_next %}
+        <a href="{% url 'mywebapp:index' next_page %}">Next Page</a>
+    {% endif %}
+
+    {% if has_prev %}
+        <a href="{% url 'mywebapp:index' prev_page %}">Prev Page</a>
+    {% endif %}
+
+</body>
