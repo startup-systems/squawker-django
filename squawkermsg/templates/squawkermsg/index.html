@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Squwaker-Django </title>
+    </head>
+    <body>
+        <form action='{% url 'index' %}' method='POST'>
+            {% csrf_token %}
+            <input type='text' name='message' maxlength=140 autofocus>
+            <input type='submit' value='Submit!'>
+        </form> 
+        {% if latest_question_list %}
+    		<ul>
+    		{% for k in latest_question_list %}
+        		<li>{{k.squawk}}</li>
+    		{% endfor %}
+    		</ul>
+		{% else %}
+    		<p>No polls are available.</p>
+		{% endif %}
+	</body>
+</html>
