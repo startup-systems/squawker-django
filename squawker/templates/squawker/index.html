@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block body %}
+  <div class="container">
+    <form action="/add-squawk/" method="post">{% csrf_token %}
+      <div class="form-group">
+        <label for="squawk_text">what's on your mind?</label>
+        <input type="text" class="form-control" name="squawk_text" pattern=".{1,140}" size="100" placeholder="Squawk" oninvalid="alert('140 characters or fewer')">
+
+      </div>
+      <input type="submit" class="btn btn-default" value="submit">
+    </form>
+  </div>
+
+  <div class="container">
+    <div class="columns large-12">
+  		<h2>
+        Past squawks {{ context }}
+      </h2>
+  	</div>
+
+    <div class="squawks">
+    {% for squawk in squawks %}
+      <blockquote class="blockquote">
+        {{ squawk.text }}
+      </blockquote>
+    {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="container">
+      <div class=pagination>
+      {% if squawks.has_previous %}
+                  <a href="/{{ squawks.previous_page_number }}">Previous</a>
+              {% endif %}
+
+              <span class="current">
+                  Page {{ squawks.number }} of {{ squawks.paginator.num_pages }}.
+              </span>
+
+              {% if squawks.has_next %}
+                  <a href="/{{ squawks.next_page_number }}">Next</a>
+              {% endif %}
+      </div>
+    </div>
+  </div>
+
+      {% endblock %}

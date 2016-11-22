@@ -2,6 +2,28 @@
 
 In this assignment, you will rebuild [Squawker](https://github.com/startup-systems/squawker) in [Django](https://www.djangoproject.com/).
 
+Dave's Development Notes
+https://ddc88-squawker.herokuapp.com/
+
+Step 1: generate requirements.txt
+```
+pip freeze > requirements.txt
+```
+
+Step 2: create Procfile
+```
+web: gunicorn gettingstarted.wsgi --log-file -
+```
+
+Step 3: runtime.txt
+```
+echo 'python-3.5.2' > runtime.txt
+```
+
+
+Additional Support:
+https://devcenter.heroku.com/articles/python-support#supported-python-runtimes
+
 ## Requirements
 
 * Passes all of the following on Travis CI:
