@@ -1,0 +1,31 @@
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Squawker</title>
+    </head>
+    
+    <body>
+		<h1>Welcome to Squawker!</h1>
+        <div>
+        	<form action="{% url 'squawker:add'%}" method="post">
+            	{% csrf_token %}
+            	<textarea name="content" maxlength="140" placeholder="Enter your squawk.." rows='4' cols='80'  maxlength='140' required></textarea>
+            	<br>
+				140 chars max<br>
+				<input type=submit value="Squawk">
+        	</form>
+        <div>
+        <!-- List of sqawks -->
+		<div>
+			{% for squawk in past_squawks %}
+			<div>
+			    {{ squawk.squawk }} <!-- Post text -->
+			<div>		
+			{% endfor %}
+		    {% if past_squawks.length == 0 %}
+			    <p>Sorry, no squawks yet.</p>
+			{% endif %}
+		</div>
+    </body>
+</html>
