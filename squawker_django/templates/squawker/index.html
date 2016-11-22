@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block body %}
+
+	<div class="row">
+
+		<div class="col-md-4">
+
+		</div>
+		
+		<div class="col-md-4">
+			<form action="/add_squawk/" method="post">{% csrf_token %}
+			  <div class="form-group">
+			    <input maxlength="140" type="text" class="form-control" name="squawk_text" placeholder="Enter a squawk..." oninvalid="alert('Must be less than 140 characters')">
+			  </div>
+			  <input type="submit" class="btn btn-default btn-lg btn-block" value="Post Squawk">
+			</form>
+		</div>
+
+		<div class="col-md-4">
+
+		</div>
+	</div>
+
+	</br>
+	<h1>Past Squawks:</h1>
+
+	{% for squawk in squawks %}
+        <h3>{{ squawk.text }}</h3>
+    {% endfor %}
+
+
+{% endblock %}
