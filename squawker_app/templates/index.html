@@ -1,0 +1,20 @@
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Squawker</title>
+    </head>
+    
+    <body>
+        <h1>Squawker!</h1>
+        <form action="{% url 'squawker:add'%}" method="post">
+            {% csrf_token %}
+            <textarea name="content" maxlength="140" placeholder="Say something..."></textarea>
+            <input type="submit">
+            <h2>Your squawks</h2>
+            {% for s in past_squawks %}
+            <p>{{s.squawk}}</p>
+            {% endfor %}
+        </form>
+    </body>
+</html>
