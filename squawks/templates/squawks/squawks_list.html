@@ -1,0 +1,14 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<form action="/" method="post">{% csrf_token %}
+			<textarea placeholder="What's on your mind?" name='text' rows='3' cols='50'  maxlength='140' required></textarea>
+			<br>
+			<input type=submit value="Squawk">
+		</form>
+		{% for squawk in squawks %}
+			<p>{{ squawk.text }} ({{ squawk.created_date }})</p>
+		{% endfor %}
+	</body>
+</html>
