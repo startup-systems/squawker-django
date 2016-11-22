@@ -1,0 +1,16 @@
+<html>
+   <body>
+    <form action="" method=post> {%csrf_token %}
+        <textarea name="input" type="text" maxlength="140" required></textarea>
+         <input type=submit value=Share>
+    </form>
+  <ul class=posts>
+  {% for post in obj_lists %}
+    <li><p>post:</p></li>
+    {{ post.title }}</br>
+    {{ post.content}}</br>
+    {{post.timestamp}}</br>
+  {% endfor %}
+  </ul>
+   </body>
+</html>
