@@ -10,10 +10,10 @@
 
     </form>
 
-  <ul class=entries>
+  <ul>
 {% if entries %}
   {% for entry in entries %}
-    <li><h2>{{ entry.message }}</h2>
+    <li>{{ entry.message }}
   {% endfor %}
 {% else %}
     <li><em>Nothing to show here.</em>
