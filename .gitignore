@@ -8,3 +8,6 @@ __pycache__/
 *.sqlite3
 *.log
 local_settings.py
+*.pyc
+db.sqlite3
+myvenv
