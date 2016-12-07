@@ -40,7 +40,7 @@ Visual styling is not considered as part of the score, though feel free to get c
     pytest~=3.0.3
     pytest-django~=3.0.0
     pytest-json~=0.4.0
-    splinter[django]~=0.7.5
+    git+https://github.com/startup-systems/splinter.git@acfac451ee3943e1e155d06249f6ed0aa851b948#egg=splinter[django]
     ```
 
 1. You will set up Django project in your copy of this repository yourself. The easiest way to do this is to run the following from this directory:
