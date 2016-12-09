@@ -4,3 +4,5 @@ pytest~=3.0.3
 pytest-django~=3.0.0
 pytest-json~=0.4.0
 splinter[django]~=0.7.5
+dj-database-url~=0.4.1
+psycopg2~=2.6.2
