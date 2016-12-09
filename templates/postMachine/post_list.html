@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Squawker</title>
+</head>
+<body>
+<div>
+	<h1>Squawker</h1>
+</div>
+
+	<form method="POST">
+		<input name="msg" type="text" placeholder="Squawk!" maxlength="140" required>
+		<input type="submit" value="msg">
+		 {% csrf_token %}
+	</form>
+
+	{% for post in posts %}
+	<div>
+		
+    		<p>{{ post.text|linebreaksbr }}</p>
+
+	</div>
+	{% endfor %}
+	
+</body>
+</html> 
