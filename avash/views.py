@@ -9,6 +9,7 @@ def index(request):
         print(i.text)
     return render(request, 'squawker/index.html', {'squawks': squawks})
 
+
 def add_squawk(request):
     if request.method == "POST":
         s_text = request.POST.get('squawkText')
