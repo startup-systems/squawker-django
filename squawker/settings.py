@@ -15,7 +15,7 @@ import os
 # add this near the top
 import dj_database_url
 
-DATABASES['Squawk'] = dj_database_url.config()
+DATABASES['avash'] = dj_database_url.config()
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
