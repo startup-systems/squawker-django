@@ -1,1 +1,1 @@
-web: gunicorn squawker-django.wsgi
+web: gunicorn squawker.wsgi --log-file -
