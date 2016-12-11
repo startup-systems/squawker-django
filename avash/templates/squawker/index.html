@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>squawker</title>
+        <link rel="stylesheet" href="/static/main.css">
+    </head>
+    <body id="index">
+      <form class="" action="/add_squawk/" method="post">
+        {% csrf_token %}
+        <input type="text" maxlength="140" placeholder="Squawk here silly" name="squawkText" value="">
+        <input type="submit" />
+      </form>
+      <ul>
+      {% for squawk in squawks %}
+        <li>{{ squawk.text }}</li>
+      {% endfor %}
+      </ul>
+      {% if trigger %}
+        <a href="/?start={{ start }}">
+          <button type="submit" name="start">next</button>
+        </a>
+      {% endif %}
+    </body>
+</html>
